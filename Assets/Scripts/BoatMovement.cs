@@ -4,31 +4,23 @@ using UnityEngine;
 
 public class BoatMovement : MonoBehaviour
 {
-    public BoxCollider2D playerCollider;
-    public float moveSpeed = 5f;
+    public float speed = 5f;
+
+    private Rigidbody2D rb;
 
     void Start()
     {
-        playerCollider = this.GetComponent<BoxCollider2D>(); 
+        rb = GetComponent<Rigidbody2D>();
     }
 
-
-    void Update()
+    void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(moveHorizontal, 0f);
 
-        transform.Translate(movement * Time.deltaTime * moveSpeed);
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
+        rb.AddRelativeForce(movement * speed); 
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-
-        }
-    }
-
 }
