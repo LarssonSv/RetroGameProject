@@ -183,6 +183,8 @@ GameObject:
   - component: {fileID: 573052527}
   - component: {fileID: 573052529}
   - component: {fileID: 573052528}
+  - component: {fileID: 573052531}
+  - component: {fileID: 573052530}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1318,6 +1320,41 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &573052530
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573052526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+--- !u!50 &573052531
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573052526}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1333185363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,11 +1436,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a22560185371bf4c82f3d175bbca6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayer: {fileID: 0}
+  currentFishPlayer: {fileID: 0}
+  currentBoatPlayer: {fileID: 0}
   currentCamera: {fileID: 0}
-  playerStart: {fileID: 1710463669}
-  PlayerPrefab: {fileID: 0}
+  PlayerFishPrefab: {fileID: 0}
+  PlayerBoatPrefab: {fileID: 0}
   CameraPrefab: {fileID: 0}
+  PlayerFishStart: {fileID: 0}
+  PlayerBoatStart: {fileID: 0}
 --- !u!114 &1410498814
 MonoBehaviour:
   m_ObjectHideFlags: 0
