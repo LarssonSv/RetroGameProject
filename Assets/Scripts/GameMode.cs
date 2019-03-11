@@ -14,6 +14,7 @@ public class GameMode : MonoBehaviour
     [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
     [SerializeField] Transform PlayerFishStart;
     [SerializeField] Transform PlayerBoatStart;
+    [SerializeField] private GameObject gameOverUI;
 
     public void StartUp()
     {
@@ -44,5 +45,13 @@ public class GameMode : MonoBehaviour
         
         return currentCamera;
     }
+
+    public void EndGame()
+    {
+        Debug.Log("GAME OVER");
+        gameOverUI.SetActive(true);
+    }
+       
+ 
 
 }
