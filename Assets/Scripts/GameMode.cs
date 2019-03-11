@@ -9,8 +9,8 @@ public class GameMode : MonoBehaviour
     public Transform playerStart;
 
     //Privates
-    [SerializeField] GameObject PlayerPrefab;
-    [SerializeField] GameObject CameraPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject PlayerPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
 
     public void StartUp()
     {
@@ -20,13 +20,23 @@ public class GameMode : MonoBehaviour
 
     public GameObject SpawnPlayer()
     {
-        currentPlayer = Instantiate(PlayerPrefab, playerStart.position, playerStart.rotation);
-        return currentPlayer;
+        if (PlayerPrefab)
+        {
+            currentPlayer = Instantiate(PlayerPrefab, playerStart.position, playerStart.rotation);
+            return currentPlayer;
+        }
+        
+        return null;
     }
 
     public GameObject SpawnCamera()
     {
-        currentCamera = Instantiate(CameraPrefab, new Vector3(0,0,-10), new Quaternion(0, 0, 0, 0));
+        if (CameraPrefab)
+        {
+            currentCamera = Instantiate(CameraPrefab, new Vector3(0, 0, -10), new Quaternion(0, 0, 0, 0));
+            return currentCamera;
+        }
+        
         return currentCamera;
     }
 
