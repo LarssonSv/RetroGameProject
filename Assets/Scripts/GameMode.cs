@@ -4,29 +4,44 @@ using UnityEngine;
 public class GameMode : MonoBehaviour
 {
     //Publics
-    [HideInInspector] public GameObject currentPlayer;
+    [HideInInspector] public GameObject currentFishPlayer;
+    [HideInInspector] public GameObject currentBoatPlayer;
     [HideInInspector] public GameObject currentCamera;
-    public Transform playerStart;
 
     //Privates
-    [SerializeField] GameObject PlayerPrefab;
-    [SerializeField] GameObject CameraPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject PlayerFishPrefab;
+    [SerializeField] [Tooltip("Optional")] GameObject PlayerBoatPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
+    [SerializeField] Transform PlayerFishStart;
+    [SerializeField] Transform PlayerBoatStart;
 
     public void StartUp()
     {
-        SpawnPlayer();
+        SpawnPlayers();
         SpawnCamera();
     }
 
-    public GameObject SpawnPlayer()
+    public void SpawnPlayers()
     {
-        currentPlayer = Instantiate(PlayerPrefab, playerStart.position, playerStart.rotation);
-        return currentPlayer;
+        if (PlayerFishPrefab)
+        {
+            currentFishPlayer = Instantiate(PlayerFishPrefab, PlayerFishStart.position, PlayerFishStart.rotation);
+        }
+
+        if (PlayerBoatPrefab)
+        {
+            currentBoatPlayer = Instantiate(PlayerBoatPrefab, PlayerBoatStart.position, PlayerBoatStart.rotation);
+        }
     }
 
     public GameObject SpawnCamera()
     {
-        currentCamera = Instantiate(CameraPrefab, new Vector3(0,0,-10), new Quaternion(0, 0, 0, 0));
+        if (CameraPrefab)
+        {
+            currentCamera = Instantiate(CameraPrefab, new Vector3(0, 0, -10), new Quaternion(0, 0, 0, 0));
+            return currentCamera;
+        }
+        
         return currentCamera;
     }
 
