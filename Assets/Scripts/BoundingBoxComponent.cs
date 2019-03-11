@@ -1,22 +1,21 @@
 ﻿using UnityEngine;
+//Author: Simon
 
 public class BoundingBoxComponent : MonoBehaviour
 {
-
+    //Privates
     private GameObject cam;
     private GameObject[] players = new GameObject[1];
-
-
     [SerializeField] float boxHeight = 5.0f;
     [SerializeField] float boxWidth = 10.0f;
 
     private void Start()
     {
-        cam = GameManager.GM.CurrentGameMode.currentCamera;
+        cam = this.gameObject;
         players[0] = GameManager.GM.CurrentGameMode.currentFishPlayer;
         players[1] = GameManager.GM.CurrentGameMode.currentBoatPlayer;
 
-        if(players[0] == null)
+        if(players[0] == null || players[1])
         {
             this.enabled = false;
         }

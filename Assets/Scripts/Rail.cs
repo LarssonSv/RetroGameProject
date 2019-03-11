@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+//Author: Simon
+
 
 public enum PlayMode
 {

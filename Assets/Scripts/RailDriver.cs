@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Author: Simon
 
 public class RailDriver : MonoBehaviour
 {
@@ -93,6 +94,7 @@ public class RailDriver : MonoBehaviour
 
         transform.position = new Vector3(temp.x, temp.y, -10f);
 
+        //if we want roation lerping
         //transform.rotation = rail.Orientation(currentIndex, dot);
     }
 
