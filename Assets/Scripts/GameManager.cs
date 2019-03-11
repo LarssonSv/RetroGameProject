@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
    
     private void Awake()
     {
+
+        CurrentGameMode = GetComponent<GameMode>();
+
         if (CurrentGameMode)
         {
             CurrentGameMode.StartUp();
