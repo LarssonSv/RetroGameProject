@@ -1342,14 +1342,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573052526}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1438,10 +1438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFishPlayer: {fileID: 0}
   currentBoatPlayer: {fileID: 0}
-  currentCamera: {fileID: 0}
   PlayerFishPrefab: {fileID: 0}
   PlayerBoatPrefab: {fileID: 0}
-  CameraPrefab: {fileID: 0}
   PlayerFishStart: {fileID: 0}
   PlayerBoatStart: {fileID: 0}
 --- !u!114 &1410498814
