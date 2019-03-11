@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BoundingBox : MonoBehaviour
+public class BoundingBoxComponent : MonoBehaviour
 {
 
     private GameObject cam;
@@ -14,6 +14,11 @@ public class BoundingBox : MonoBehaviour
     {
         cam = GameManager.GM.CurrentGameMode.currentCamera;
         player = GameManager.GM.CurrentGameMode.currentPlayer;
+
+        if(player == null)
+        {
+            this.enabled = false;
+        }
     }
 
 
