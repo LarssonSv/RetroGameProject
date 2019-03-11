@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4d013a619c79a42bb991fc0ca55398, type: 3}
+  m_Name: GameMode
+  m_EditorClassIdentifier: 
+  CurrentPlayerShip: {fileID: 0}
+  CurrentCameraController: {fileID: 0}
+  Score: 0
+  PlayerShipPrefab: {fileID: 8381954463442960083, guid: 81b80d1ce283c924ab8aa366285d0252,
+    type: 3}
+  CameraControllerPrefab: {fileID: 5744512698474059553, guid: 120d325d22032b047ae2a8c7de188e52,
+    type: 3}
