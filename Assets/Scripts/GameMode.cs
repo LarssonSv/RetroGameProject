@@ -1,43 +1,35 @@
 ﻿#pragma warning disable 0649  //Disabled Warning for unity-editor bug
 using UnityEngine;
+//Author Simon
 
 public class GameMode : MonoBehaviour
 {
     //Publics
-    [HideInInspector] public GameObject currentPlayer;
-    [HideInInspector] public GameObject currentCamera;
-    public Transform playerStart;
+    [HideInInspector] public GameObject currentFishPlayer;
+    [HideInInspector] public GameObject currentBoatPlayer;
 
     //Privates
-    [SerializeField][Tooltip("Optional")] GameObject PlayerPrefab;
-    [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
+    [SerializeField] [Tooltip("Optional")] GameObject PlayerFishPrefab;
+    [SerializeField] [Tooltip("Optional")] GameObject PlayerBoatPrefab;
+    [SerializeField] Transform PlayerFishStart;
+    [SerializeField] Transform PlayerBoatStart;
 
     public void StartUp()
     {
-        SpawnPlayer();
-        SpawnCamera();
+        SpawnPlayers();
+
     }
 
-    public GameObject SpawnPlayer()
+    public void SpawnPlayers()
     {
-        if (PlayerPrefab)
+        if (PlayerFishPrefab)
         {
-            currentPlayer = Instantiate(PlayerPrefab, playerStart.position, playerStart.rotation);
-            return currentPlayer;
+            currentFishPlayer = Instantiate(PlayerFishPrefab, PlayerFishStart.position, PlayerFishStart.rotation);
         }
-        
-        return null;
-    }
 
-    public GameObject SpawnCamera()
-    {
-        if (CameraPrefab)
+        if (PlayerBoatPrefab)
         {
-            currentCamera = Instantiate(CameraPrefab, new Vector3(0, 0, -10), new Quaternion(0, 0, 0, 0));
-            return currentCamera;
+            currentBoatPlayer = Instantiate(PlayerBoatPrefab, PlayerBoatStart.position, PlayerBoatStart.rotation);
         }
-        
-        return currentCamera;
     }
-
 }

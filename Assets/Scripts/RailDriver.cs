@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Author: Simon
 
 public class RailDriver : MonoBehaviour
 {
 
-    public Rail rail;
+    [SerializeField] Rail rail;
     public float speed = 2.5f;
     public PlayMode mode;
     public bool isReversed;
@@ -17,21 +18,16 @@ public class RailDriver : MonoBehaviour
     private int currentIndex = 0;
 
 
-    private void Start()
-    {
-        rail = GameObject.FindGameObjectWithTag("Rail").GetComponent<Rail>();
-    }
-
-
     private void Update()
     {
-        if (rail || !isCompleted)
+        if (rail && !isCompleted)
         {
             Play(!isReversed);
         }
         else
         {
-            Debug.LogWarning("No Rail Found!");
+            Debug.LogWarning("Rail not found or ended! Turning off this script now.");
+            this.enabled = false;
         }
     }
 
@@ -98,6 +94,7 @@ public class RailDriver : MonoBehaviour
 
         transform.position = new Vector3(temp.x, temp.y, -10f);
 
+        //if we want roation lerping
         //transform.rotation = rail.Orientation(currentIndex, dot);
     }
 

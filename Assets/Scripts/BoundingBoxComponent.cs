@@ -1,44 +1,54 @@
 ﻿using UnityEngine;
+//Author: Simon
 
-public class BoundingBox : MonoBehaviour
+public class BoundingBoxComponent : MonoBehaviour
 {
-
+    //Privates
     private GameObject cam;
-    private GameObject player;
-
-
+    private GameObject[] players = new GameObject[1];
     [SerializeField] float boxHeight = 5.0f;
     [SerializeField] float boxWidth = 10.0f;
 
     private void Start()
     {
-        cam = GameManager.GM.CurrentGameMode.currentCamera;
-        player = GameManager.GM.CurrentGameMode.currentPlayer;
+        cam = this.gameObject;
+        players[0] = GameManager.GM.CurrentGameMode.currentFishPlayer;
+        players[1] = GameManager.GM.CurrentGameMode.currentBoatPlayer;
+
+        if(players[0] == null || players[1])
+        {
+            this.enabled = false;
+        }
+
     }
 
 
     private void Update()
     {
 
-        //BoundingBox Y
-        if (player.transform.position.y < (cam.transform.position.y - boxHeight))
+        foreach(GameObject x in players)
         {
-            player.transform.position = new Vector3(player.transform.position.x, (cam.transform.position.y - boxHeight), 0.0f);
-        }
-        else if (player.transform.position.y > (cam.transform.position.y + boxHeight))
-        {
-            player.transform.position = new Vector3(player.transform.position.x, (cam.transform.position.y + boxHeight), 0.0f);
+            if (x.transform.position.y < (cam.transform.position.y - boxHeight))
+            {
+                x.transform.position = new Vector3(x.transform.position.x, (cam.transform.position.y - boxHeight), 0.0f);
+            }
+            else if (x.transform.position.y > (cam.transform.position.y + boxHeight))
+            {
+                x.transform.position = new Vector3(x.transform.position.x, (cam.transform.position.y + boxHeight), 0.0f);
+            }
+
+            //BoundingBox X
+            if (x.transform.position.x < (cam.transform.position.x - boxWidth))
+            {
+                x.transform.position = new Vector3((cam.transform.position.x - boxWidth), x.transform.position.y, 0.0f);
+            }
+            else if (x.transform.position.x > (cam.transform.position.x + boxWidth))
+            {
+                x.transform.position = new Vector3((cam.transform.position.x + boxWidth), x.transform.position.y, 0.0f);
+            }
         }
 
-        //BoundingBox X
-        if(player.transform.position.x < (cam.transform.position.x - boxWidth))
-        {
-            player.transform.position = new Vector3((cam.transform.position.x - boxWidth), player.transform.position.y , 0.0f);
-        }
-        else if(player.transform.position.x > (cam.transform.position.x + boxWidth))
-        {
-            player.transform.position = new Vector3((cam.transform.position.x + boxWidth), player.transform.position.y, 0.0f);
-        }
+       
 
 
     }
