@@ -4,29 +4,34 @@ using UnityEngine;
 public class GameMode : MonoBehaviour
 {
     //Publics
-    [HideInInspector] public GameObject currentPlayer;
+    [HideInInspector] public GameObject currentFishPlayer;
+    [HideInInspector] public GameObject currentBoatPlayer;
     [HideInInspector] public GameObject currentCamera;
-    public Transform playerStart;
 
     //Privates
-    [SerializeField][Tooltip("Optional")] GameObject PlayerPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject PlayerFishPrefab;
+    [SerializeField] [Tooltip("Optional")] GameObject PlayerBoatPrefab;
     [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
+    [SerializeField] Transform PlayerFishStart;
+    [SerializeField] Transform PlayerBoatStart;
 
     public void StartUp()
     {
-        SpawnPlayer();
+        SpawnPlayers();
         SpawnCamera();
     }
 
-    public GameObject SpawnPlayer()
+    public void SpawnPlayers()
     {
-        if (PlayerPrefab)
+        if (PlayerFishPrefab)
         {
-            currentPlayer = Instantiate(PlayerPrefab, playerStart.position, playerStart.rotation);
-            return currentPlayer;
+            currentFishPlayer = Instantiate(PlayerFishPrefab, PlayerFishStart.position, PlayerFishStart.rotation);
         }
-        
-        return null;
+
+        if (PlayerBoatPrefab)
+        {
+            currentBoatPlayer = Instantiate(PlayerBoatPrefab, PlayerBoatStart.position, PlayerBoatStart.rotation);
+        }
     }
 
     public GameObject SpawnCamera()
