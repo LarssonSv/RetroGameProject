@@ -19,6 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("Spawn Position Offset from center of screen")]
     [Range(0.0f, 50.0f)] [Tooltip("Spawn offset on X-axis")] public int offsetX = 5;
 
+    Vector3Int spawnPos;
 
     private void Start()
     {
@@ -34,19 +35,20 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if(Random.Range(0.0f, 100.0f) < spawnChance)
         {
-            Vector3Int spawnPos = Vector3Int.FloorToInt((currentCamera.transform.position + new Vector3(offsetX, 0, 0)));
+            spawnPos = Vector3Int.RoundToInt((currentCamera.transform.position + new Vector3(offsetX, 0, 0)));
             int i = 0;
 
             while(i < 10)
             {
                 if(!GetCell(map,map.GetCellCenterWorld(spawnPos)))
                 {
+                    
                     spawnPos.y -= 1;
                     i++;
                 }
                 else
                 {
-                    spawnPos.y += 3;
+                    spawnPos.y += 1;
                     map.SetTile(spawnPos, temp);
                     return true;
                 }
@@ -62,5 +64,10 @@ public class ObstacleSpawner : MonoBehaviour
         return tilemap.GetTile(tilemap.WorldToCell(cellWorldPos));
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(spawnPos, new Vector3(1, 1, 1));
+    }
 
 }
