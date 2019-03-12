@@ -1,16 +1,17 @@
 ﻿#pragma warning disable 0649  //Disabled Warning for unity-editor bug
 using UnityEngine;
-//Author Simon
 
 public class GameMode : MonoBehaviour
 {
     //Publics
     [HideInInspector] public GameObject currentFishPlayer;
     [HideInInspector] public GameObject currentBoatPlayer;
+    [HideInInspector] public GameObject currentCamera;
 
     //Privates
-    [SerializeField] [Tooltip("Optional")] GameObject PlayerFishPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject PlayerFishPrefab;
     [SerializeField] [Tooltip("Optional")] GameObject PlayerBoatPrefab;
+    [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
     [SerializeField] Transform PlayerFishStart;
     [SerializeField] Transform PlayerBoatStart;
     [SerializeField] private GameObject gameOverUI;
@@ -18,7 +19,7 @@ public class GameMode : MonoBehaviour
     public void StartUp()
     {
         SpawnPlayers();
-
+        SpawnCamera();
     }
 
     public void SpawnPlayers()
@@ -33,7 +34,6 @@ public class GameMode : MonoBehaviour
             currentBoatPlayer = Instantiate(PlayerBoatPrefab, PlayerBoatStart.position, PlayerBoatStart.rotation);
         }
     }
-<<<<<<< HEAD
 
     public GameObject SpawnCamera()
     {
@@ -54,6 +54,4 @@ public class GameMode : MonoBehaviour
        
  
 
-=======
->>>>>>> 9ffd9f201235b4f54d8e8662b7a09255dbd3bb93
 }
