@@ -1652,7 +1652,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573052526}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2701,6 +2701,7 @@ GameObject:
   - component: {fileID: 1410498815}
   - component: {fileID: 1410498814}
   - component: {fileID: 1410498813}
+  - component: {fileID: 1410498816}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GM
@@ -2725,7 +2726,6 @@ MonoBehaviour:
   currentCamera: {fileID: 0}
   PlayerFishPrefab: {fileID: 0}
   PlayerBoatPrefab: {fileID: 0}
-  CameraPrefab: {fileID: 0}
   PlayerFishStart: {fileID: 0}
   PlayerBoatStart: {fileID: 0}
   gameOverUI: {fileID: 0}
@@ -2757,6 +2757,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1410498816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410498812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32ee90bc512a57488782f614464f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bubble
+    prefab: {fileID: 975546104411136635, guid: 80b98033e49751a4dab6a245866a825b, type: 3}
+    size: 10
 --- !u!1 &1447315821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,7 +3333,6 @@ GameObject:
   - component: {fileID: 2041281199}
   - component: {fileID: 2041281198}
   - component: {fileID: 2041281201}
-  - component: {fileID: 2041281202}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3342,8 +3357,8 @@ Camera:
   m_GameObject: {fileID: 2041281197}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0.56855285, b: 0.9056604, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -3408,20 +3423,6 @@ MonoBehaviour:
   isLooping: 0
   pingPong: 0
   CurrentRailPos: {x: 0, y: 0, z: 0}
---- !u!114 &2041281202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041281197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1121c9fc522c45346b5d4f34ca2315fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boxHeight: 5
-  boxWidth: 10
 --- !u!1 &2094419604
 GameObject:
   m_ObjectHideFlags: 0

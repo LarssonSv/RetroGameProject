@@ -15,11 +15,7 @@ public class BoundingBoxComponent : MonoBehaviour
         players[0] = GameManager.GM.CurrentGameMode.currentFishPlayer;
         players[1] = GameManager.GM.CurrentGameMode.currentBoatPlayer;
 
-        if(players[0] == null || players[1])
-        {
-            this.enabled = false;
-        }
-
+        this.enabled = false;
     }
 
 

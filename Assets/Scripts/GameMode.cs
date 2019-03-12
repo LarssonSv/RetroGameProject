@@ -9,10 +9,13 @@ public class GameMode : MonoBehaviour
     [HideInInspector] public GameObject currentCamera;
 
     //Privates
+    [Header("Setup Players")]
     [SerializeField][Tooltip("Optional")] GameObject PlayerFishPrefab;
     [SerializeField] [Tooltip("Optional")] GameObject PlayerBoatPrefab;
+    [Header("Setup Players Spawn")]
     [SerializeField] Transform PlayerFishStart;
     [SerializeField] Transform PlayerBoatStart;
+    [Header("UI")]
     [SerializeField] GameObject gameOverUI;
 
     public void StartUp()
