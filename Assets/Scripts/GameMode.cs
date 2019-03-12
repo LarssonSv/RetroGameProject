@@ -6,7 +6,7 @@ public class GameMode : MonoBehaviour
     //Publics
     [HideInInspector] public GameObject currentFishPlayer;
     [HideInInspector] public GameObject currentBoatPlayer;
-    [HideInInspector] public GameObject currentCamera;
+    public GameObject currentCamera;
 
     //Privates
     [Header("Setup Players")]
@@ -21,7 +21,7 @@ public class GameMode : MonoBehaviour
     public void StartUp()
     {
         SpawnPlayers();
-        currentCamera = Camera.main.gameObject;
+     
     }
 
     public void SpawnPlayers()
