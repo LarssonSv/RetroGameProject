@@ -5,15 +5,28 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     //Publics
-    [Range(0.0f, 100.0f)]public float spawnChance;
+    [Header("Spawn Behavior")]
+    [Range(0.0f, 100.0f)][Tooltip("Chance of to actually spawn, will properly be moved to be handle by the prefab spawned")] public float spawnChance = 5.0f;
+    [Range(0.0f, 15.0f)][Tooltip("Delay before spawn start")]public float delay = 5.0f;
+    [Range(0.0f, 10.0f)][Tooltip("Delay before spawn start")]public float repeatRate = 5.0f;
 
     //Privates
+    [Header("Setup")]
     [SerializeField] List<GameObject> obstacles = new List<GameObject>();
     [SerializeField] RailDriver railDriver;
 
+    [Header("Spawn Position Offset from center of screen")]
+    [Range(0.0f, 50.0f)] [Tooltip("Spawn offset on X-axis")] public float offsetX = 5.0f;
+    [Range(0.0f, 50.0f)] [Tooltip("Spawn offset on Y-axis")] public float offsetY = 5.0f;
+
+
     private void Start()
     {
-        
+        if(obstacles.Count > 0)
+        {
+            InvokeRepeating("AttemptSpawn", delay, repeatRate);
+        }
+
     }
 
     bool AttemptSpawn()
@@ -26,6 +39,9 @@ public class ObstacleSpawner : MonoBehaviour
 
         return false;
     }
+
+
+
 
 
 }

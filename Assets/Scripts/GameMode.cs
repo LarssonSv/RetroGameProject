@@ -11,15 +11,14 @@ public class GameMode : MonoBehaviour
     //Privates
     [SerializeField][Tooltip("Optional")] GameObject PlayerFishPrefab;
     [SerializeField] [Tooltip("Optional")] GameObject PlayerBoatPrefab;
-    [SerializeField][Tooltip("Optional")] GameObject CameraPrefab;
     [SerializeField] Transform PlayerFishStart;
     [SerializeField] Transform PlayerBoatStart;
-    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] GameObject gameOverUI;
 
     public void StartUp()
     {
         SpawnPlayers();
-        SpawnCamera();
+        currentCamera = Camera.main.gameObject;
     }
 
     public void SpawnPlayers()
@@ -33,17 +32,6 @@ public class GameMode : MonoBehaviour
         {
             currentBoatPlayer = Instantiate(PlayerBoatPrefab, PlayerBoatStart.position, PlayerBoatStart.rotation);
         }
-    }
-
-    public GameObject SpawnCamera()
-    {
-        if (CameraPrefab)
-        {
-            currentCamera = Instantiate(CameraPrefab, new Vector3(0, 0, -10), new Quaternion(0, 0, 0, 0));
-            return currentCamera;
-        }
-        
-        return currentCamera;
     }
 
     public void EndGame()
