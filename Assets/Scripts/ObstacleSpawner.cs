@@ -46,7 +46,7 @@ public class ObstacleSpawner : MonoBehaviour
                 }
                 else
                 {
-                    spawnPos.y += 1;
+                    spawnPos.y += 3;
                     map.SetTile(spawnPos, temp);
                     return true;
                 }
