@@ -13,6 +13,11 @@ public class BoatMovement : MonoBehaviour
     public LayerMask waterSurface;
     public Vector2 jumpHeight;
 
+    public GameObject bomb;
+    public Transform bombSpawner;
+    public float bombRate;
+    private float nextBomb;
+
 
     void Start()
     {
@@ -60,6 +65,12 @@ public class BoatMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && onWaterSurface == true)
         {
             GetComponent<Rigidbody2D>().AddRelativeForce(jumpHeight, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetButton("Fire1") && Time.time > nextBomb)
+        {
+            nextBomb = Time.time + bombRate;
+            Instantiate(bomb, bombSpawner.position, bombSpawner.rotation);
         }
     }
 
