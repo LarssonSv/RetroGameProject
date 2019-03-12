@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class RailDriver : MonoBehaviour
 {
-
+    //Publics
     [SerializeField] Rail rail;
     public float speed = 2.5f;
     public PlayMode mode;
     public bool isReversed;
     public bool isLooping;
     public bool pingPong;
+    public Vector3 CurrentRailPos;
 
+    //Privates
     private bool isCompleted = false;
     private float dot = 0.0f;
     private int currentIndex = 0;
@@ -90,9 +92,9 @@ public class RailDriver : MonoBehaviour
             }
         }
 
-        Vector3 temp = rail.PositionOnRail(currentIndex, dot, mode);
+        CurrentRailPos = rail.PositionOnRail(currentIndex, dot, mode);
 
-        transform.position = new Vector3(temp.x, temp.y, -10f);
+        transform.position = new Vector3(CurrentRailPos.x, CurrentRailPos.y, -10f);
 
         //if we want roation lerping
         //transform.rotation = rail.Orientation(currentIndex, dot);
