@@ -9,7 +9,7 @@ public class GameOverUI : MonoBehaviour
     public void Quit()
     {
         Debug.Log("QUIT CLICKED");
-        Application.Quit();
+        QuitGame();
     }
 
     public void Retry()
@@ -17,4 +17,11 @@ public class GameOverUI : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
+
+    public void QuitGame()
+    {
+        Application.Quit();
+
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 }

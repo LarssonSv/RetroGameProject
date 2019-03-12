@@ -22,11 +22,18 @@ public class StartMenuManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("QUIT CLICKED");
-        Application.Quit();
+        Quit();
     }
 
     public void Credits ()
     {
         Debug.Log("CREDITS CLICKED");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
