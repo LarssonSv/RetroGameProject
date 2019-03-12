@@ -46,14 +46,22 @@ public class PausMenuManager: MonoBehaviour
     {
         Debug.Log("Restart Clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
 
     }
 
     public void Quit()
     {
         Debug.Log("App Quit");
-        Application.Quit();
+        QuitGame();
+        
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 
 }
