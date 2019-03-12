@@ -2702,6 +2702,7 @@ GameObject:
   - component: {fileID: 1410498814}
   - component: {fileID: 1410498813}
   - component: {fileID: 1410498816}
+  - component: {fileID: 1410498817}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GM
@@ -2723,7 +2724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFishPlayer: {fileID: 0}
   currentBoatPlayer: {fileID: 0}
-  currentCamera: {fileID: 0}
+  currentCamera: {fileID: 2041281197}
   PlayerFishPrefab: {fileID: 0}
   PlayerBoatPrefab: {fileID: 0}
   PlayerFishStart: {fileID: 0}
@@ -2773,6 +2774,25 @@ MonoBehaviour:
   - tag: Bubble
     prefab: {fileID: 975546104411136635, guid: 80b98033e49751a4dab6a245866a825b, type: 3}
     size: 10
+--- !u!114 &1410498817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410498812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aab13fb2d0869f408942e0221b0c907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnChance: 100
+  delay: 1.2
+  repeatRate: 2.03
+  obstacles: []
+  map: {fileID: 573052529}
+  temp: {fileID: 11400000, guid: 097af6834aa69b2419334ba9ada3fcb8, type: 2}
+  offsetX: 3
 --- !u!1 &1447315821
 GameObject:
   m_ObjectHideFlags: 0
