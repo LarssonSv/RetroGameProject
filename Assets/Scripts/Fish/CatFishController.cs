@@ -5,22 +5,15 @@ using UnityEngine;
 public class CatFishController : MonoBehaviour
 {
 
-    [SerializeField] float speed;
-
-
-
+    
     //publics
-    public GameObject bubble;
-    public Transform bubbleSpawner;
-    public float MoveSpeed;
-    public float bubbleRate;
-    public float bubbleSpeed;
-    public float bubbleForce = 10.0f;
-
+   public float MoveSpeed;
+    
+   
 
     //privates
     private Rigidbody2D rb2D;
-    private float nextBubble;
+    
 
     float moveHorizontal;
     float moveVertical;
@@ -45,26 +38,7 @@ public class CatFishController : MonoBehaviour
 
     }
 
-    public void FixedUpdate()
-    {
-        if (Input.GetButton("Fire1") && Time.time > nextBubble)
-        {
-           nextBubble = Time.time + bubbleRate;
-            Instantiate(bubble, bubbleSpawner.position, bubbleSpawner.rotation);
-           
-
-
-           Shoot(); 
-            
-        }
-
-        void Shoot()
-        {
-            Debug.Log("SHOOT");
-        }
-        
-
-        }
+    
 
     }
 

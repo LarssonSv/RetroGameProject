@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377724703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.436458, y: 0.8801729, z: -3.5107422}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1323895227}
@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 1323895230}
   - component: {fileID: 1323895229}
   - component: {fileID: 1323895228}
+  - component: {fileID: 1323895232}
   m_Layer: 0
   m_Name: CatFish
   m_TagString: Untagged
@@ -300,8 +301,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323895226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.16, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.7235417, y: 0.8801729, z: -3.5107422}
   m_LocalScale: {x: 0.303424, y: 0.303424, z: 0.303424}
   m_Children:
   - {fileID: 24218526}
@@ -341,13 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1894b50d4c3ee67418ce169ae180ab05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  bubble: {fileID: 9011231912571597175, guid: 54271169fb9ed0a4fa0e723e6b3ed563, type: 3}
-  bubbleSpawner: {fileID: 24218526}
   MoveSpeed: 8
-  bubbleRate: 1
-  bubbleSpeed: 1
-  bubbleForce: 10
 --- !u!61 &1323895230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -422,6 +417,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1323895232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323895226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a78ca636ccf509479e7d6e0e77d9a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubble: {fileID: 9011231912571597175, guid: 54271169fb9ed0a4fa0e723e6b3ed563, type: 3}
+  bubbleSpawner: {fileID: 24218526}
+  bubbleRate: 1
+  bubbleSpeed: 1
 --- !u!1 &1516654550
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2022991120
 Transform:
   m_ObjectHideFlags: 0
