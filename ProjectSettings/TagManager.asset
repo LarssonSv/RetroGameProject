@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GM
   - Rail
+  - FirePoint
   layers:
   - Default
   - TransparentFX
