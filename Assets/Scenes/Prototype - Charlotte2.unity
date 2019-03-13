@@ -368,9 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1894b50d4c3ee67418ce169ae180ab05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 8
   bubble: {fileID: 9011231912571597175, guid: 54271169fb9ed0a4fa0e723e6b3ed563, type: 3}
   bubbleSpawner: {fileID: 24218526}
+  MoveSpeed: 8
   bubbleRate: 1
   bubbleSpeed: 0
   bubbleForce: 10
@@ -584,7 +584,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16
   jumpHeight: {x: 0, y: 5}
-  bomb: {fileID: 5699834140637762203, guid: ca6ce918f1a4cc04e9d0569a561e942c, type: 3}
+  bomb: {fileID: 5699834140637762203, guid: e6c6b10fdbfbe4448a4e1dd56886070e, type: 3}
   bombSpawner: {fileID: 1840578864}
   bombRate: 3
 --- !u!61 &1569473396

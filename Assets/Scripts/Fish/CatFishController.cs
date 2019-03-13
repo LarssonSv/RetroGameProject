@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class CatFishController : MonoBehaviour
 {
-    public float MoveSpeed;
-  
-    private Rigidbody2D rb2D;
-    float moveHorizontal;
-    float moveVertical;
 
+    [SerializeField] float speed;
+
+
+
+    //publics
     public GameObject bubble;
     public Transform bubbleSpawner;
+    public float MoveSpeed;
     public float bubbleRate;
     public float bubbleSpeed;
+    public float bubbleForce = 10.0f;
 
-  
+
+    //privates
+    private Rigidbody2D rb2D;
     private float nextBubble;
 
-    public float bubbleForce = 10.0f;
+    float moveHorizontal;
+    float moveVertical;
+    Transform firePoint;
+
 
 
     void Start()
@@ -46,8 +53,19 @@ public class CatFishController : MonoBehaviour
             Instantiate(bubble, bubbleSpawner.position, bubbleSpawner.rotation);
            
 
+
+            Shoot(); 
+            
         }
+
+
      
+        void Shoot()
+        {
+            Debug.Log("SHOOT");
+            
+
+        }
     }
 
 
