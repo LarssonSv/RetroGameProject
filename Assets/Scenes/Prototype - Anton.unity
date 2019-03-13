@@ -477,7 +477,7 @@ MonoBehaviour:
   jumpHeight: {x: 0, y: 5}
   bomb: {fileID: 5699834140637762203, guid: ca6ce918f1a4cc04e9d0569a561e942c, type: 3}
   bombSpawner: {fileID: 1840578864}
-  bombRate: 3
+  bombRate: 0
 --- !u!61 &1569473396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1830354121
 GameObject:
   m_ObjectHideFlags: 0
