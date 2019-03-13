@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9011231912571597170}
   - component: {fileID: 9011231912571597169}
   - component: {fileID: 9011231912571597168}
+  - component: {fileID: 3125218482048857731}
   m_Layer: 0
   m_Name: BubbleTest
   m_TagString: Untagged
@@ -118,3 +119,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.7999998
+--- !u!114 &3125218482048857731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011231912571597175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ebe052f84977845bab6f5372e1deec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0

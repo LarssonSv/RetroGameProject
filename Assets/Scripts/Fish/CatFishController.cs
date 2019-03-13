@@ -49,23 +49,23 @@ public class CatFishController : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && Time.time > nextBubble)
         {
-            nextBubble = Time.time + bubbleRate;
+           nextBubble = Time.time + bubbleRate;
             Instantiate(bubble, bubbleSpawner.position, bubbleSpawner.rotation);
            
 
 
-            Shoot(); 
+           Shoot(); 
             
         }
 
-
-     
         void Shoot()
         {
             Debug.Log("SHOOT");
-            
+        }
+        
 
         }
+
     }
 
 
@@ -73,4 +73,4 @@ public class CatFishController : MonoBehaviour
 
 
 
-}
+
