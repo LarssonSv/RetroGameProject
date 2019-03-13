@@ -71,6 +71,7 @@ public class BoatMovement : MonoBehaviour
         {
             nextBomb = Time.time + bombRate;
             Instantiate(bomb, bombSpawner.position, bombSpawner.rotation);
+
         }
     }
 

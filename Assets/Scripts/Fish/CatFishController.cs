@@ -18,7 +18,7 @@ public class CatFishController : MonoBehaviour
   
     private float nextBubble;
 
-    public float bubbleForce = 750.0f;
+    public float bubbleForce = 10.0f;
 
 
     void Start()
@@ -44,7 +44,7 @@ public class CatFishController : MonoBehaviour
         {
             nextBubble = Time.time + bubbleRate;
             Instantiate(bubble, bubbleSpawner.position, bubbleSpawner.rotation);
-            GetComponent<Rigidbody>().AddForce(transform.right * bubbleForce);
+           
 
         }
      
