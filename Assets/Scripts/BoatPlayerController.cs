@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatMovement : MonoBehaviour
+public class BoatPlayerController : MonoBehaviour
 {
     public float speed = 8f;
     public bool speedModifier = false;
