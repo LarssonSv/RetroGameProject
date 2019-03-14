@@ -5,6 +5,9 @@ using UnityEngine;
 public class FishPlayerController : MonoBehaviour
 {
 
+    [SerializeField] protected float rotationSpeed = 2f;
+    [SerializeField] protected float forceSpeed = 50f;
+
     protected Rigidbody2D rb2D;
     protected float horizontal = 0f;
     protected float vertical = 0f;
@@ -35,17 +38,17 @@ public class FishPlayerController : MonoBehaviour
 
 
 
-        if (bMove)
-        {
+        //if (bMove)
+        //{
             horizontal = Input.GetAxis("Vertical") * Time.deltaTime;
             vertical = Input.GetAxis("Horizontal") * Time.deltaTime;
-            //vertical = -vertical;
-        }
+        //vertical = -vertical;
+        //}
 
-
+        print(vertical);
         // OR INSIDE IF????
         float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), Time.deltaTime * 2);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), Time.deltaTime * rotationSpeed);
 
 
         if (Input.GetButtonDown("Jump"))
@@ -59,7 +62,7 @@ public class FishPlayerController : MonoBehaviour
 
         if (bAccelerate)
         {
-            rb2D.AddRelativeForce(Vector2.left * -50f * Time.deltaTime);
+            rb2D.AddRelativeForce(Vector2.left * -forceSpeed * Time.deltaTime);
         }
     }
 }
