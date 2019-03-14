@@ -35,12 +35,12 @@ public class FishPlayerController : MonoBehaviour
 
 
 
-        if (bMove)
-        {
+        //if (bMove)
+        //{
             horizontal = Input.GetAxis("Vertical") * Time.deltaTime;
             vertical = Input.GetAxis("Horizontal") * Time.deltaTime;
             //vertical = -vertical;
-        }
+        //}
 
 
         // OR INSIDE IF????
