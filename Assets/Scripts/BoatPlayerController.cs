@@ -51,7 +51,7 @@ public class BoatPlayerController : MonoBehaviour
     {
         IsFloating();
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("HorizontalBoat") > 0)
         {
             speedModifier = true;
             speed = 4f;
@@ -64,8 +64,8 @@ public class BoatPlayerController : MonoBehaviour
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2D.AddRelativeForce(movement * speed);
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("HorizontalBoat");
+        moveVertical = Input.GetAxis("VerticalBoat");
 
         if (Input.GetButtonDown("Jump") && onWaterSurface == true)
         {
