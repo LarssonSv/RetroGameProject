@@ -13,15 +13,20 @@ public class BoatMovement : MonoBehaviour
     public LayerMask waterSurface;
     public Vector2 jumpHeight;
 
-    public GameObject bomb;
-    public Transform bombSpawner;
+
+    private Quaternion bombPosition;
     public float bombRate;
     private float nextBomb;
+
+    ObjectPooler objectPooler;
 
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        objectPooler = ObjectPooler.Instance;
+
+        
     }
 
     void IsFloating()
@@ -70,8 +75,7 @@ public class BoatMovement : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextBomb)
         {
             nextBomb = Time.time + bombRate;
-            Instantiate(bomb, bombSpawner.position, bombSpawner.rotation);
-
+            objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
         }
     }
 
