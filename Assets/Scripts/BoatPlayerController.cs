@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatMovement : MonoBehaviour
+public class BoatPlayerController : MonoBehaviour
 {
     public float speed = 8f;
     public bool speedModifier = false;
@@ -13,15 +13,20 @@ public class BoatMovement : MonoBehaviour
     public LayerMask waterSurface;
     public Vector2 jumpHeight;
 
-    public GameObject bomb;
-    public Transform bombSpawner;
+
+    private Quaternion bombPosition;
     public float bombRate;
     private float nextBomb;
+
+    ObjectPooler objectPooler;
 
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        objectPooler = ObjectPooler.Instance;
+
+        
     }
 
     void IsFloating()
@@ -46,7 +51,7 @@ public class BoatMovement : MonoBehaviour
     {
         IsFloating();
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("HorizontalBoat") > 0)
         {
             speedModifier = true;
             speed = 4f;
@@ -59,8 +64,8 @@ public class BoatMovement : MonoBehaviour
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2D.AddRelativeForce(movement * speed);
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("HorizontalBoat");
+        moveVertical = Input.GetAxis("VerticalBoat");
 
         if (Input.GetButtonDown("Jump") && onWaterSurface == true)
         {
@@ -70,8 +75,7 @@ public class BoatMovement : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextBomb)
         {
             nextBomb = Time.time + bombRate;
-            Instantiate(bomb, bombSpawner.position, bombSpawner.rotation);
-
+            objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
         }
     }
 
