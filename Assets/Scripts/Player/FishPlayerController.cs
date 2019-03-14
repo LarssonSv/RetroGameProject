@@ -7,6 +7,7 @@ public class FishPlayerController : MonoBehaviour
 
     [SerializeField] protected float rotationSpeed = 2f;
     [SerializeField] protected float forceSpeed = 50f;
+    [SerializeField] protected float maxSpeed = 2f;
 
     protected Rigidbody2D rb2D;
     protected float horizontal = 0f;
@@ -38,16 +39,13 @@ public class FishPlayerController : MonoBehaviour
 
 
 
-        //if (bMove)
-        //{
-            horizontal = Input.GetAxis("Vertical") * Time.deltaTime;
-            vertical = Input.GetAxis("Horizontal") * Time.deltaTime;
-        //vertical = -vertical;
-        //}
+        if (Input.GetAxisRaw("Vertical") != 0 || (Input.GetAxisRaw("Horizontal") != 0))
+        {
+            vertical = Input.GetAxisRaw("Vertical") * Time.deltaTime;
+            horizontal = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        }
 
-        print(vertical);
-        // OR INSIDE IF????
-        float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), Time.deltaTime * rotationSpeed);
 
 
@@ -59,8 +57,8 @@ public class FishPlayerController : MonoBehaviour
         {
             bAccelerate = false;
         }
-
-        if (bAccelerate)
+       
+        if (bAccelerate && rb2D.velocity.magnitude < maxSpeed)
         {
             rb2D.AddRelativeForce(Vector2.left * -forceSpeed * Time.deltaTime);
         }
