@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoatPlayerController : MonoBehaviour
 {
-    public float speed = 8f;
+    public float speed = 16f;
     public bool speedModifier = false;
     public bool onWaterSurface;
     private Rigidbody2D rb2D;
@@ -12,6 +12,9 @@ public class BoatPlayerController : MonoBehaviour
     float moveVertical;
     public LayerMask waterSurface;
     public Vector2 jumpHeight;
+    public float fallmultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+
 
 
     private Quaternion bombPosition;
@@ -25,7 +28,6 @@ public class BoatPlayerController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         objectPooler = ObjectPooler.Instance;
-
         
     }
 
@@ -69,7 +71,9 @@ public class BoatPlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && onWaterSurface == true)
         {
-            GetComponent<Rigidbody2D>().AddRelativeForce(jumpHeight, ForceMode2D.Impulse);
+
+            rb2D.AddRelativeForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+
         }
 
         if (Input.GetButton("Fire1") && Time.time > nextBomb)
@@ -77,8 +81,24 @@ public class BoatPlayerController : MonoBehaviour
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
         }
+
+        BetterJump();
+
     }
 
+
+    void BetterJump()
+    {
+        if (rb2D.velocity.y < 1)
+        {
+            rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallmultiplier - 1) * Time.deltaTime;
+        }
+
+        else if (rb2D.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
+    }
 
 
 
