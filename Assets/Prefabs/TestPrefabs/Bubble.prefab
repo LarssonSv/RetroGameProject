@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 9011231912571597170}
   - component: {fileID: 9011231912571597169}
   - component: {fileID: 9011231912571597168}
-  - component: {fileID: 4660268568462641969}
+  - component: {fileID: 684628402084043032}
   m_Layer: 0
-  m_Name: Bubble
-  m_TagString: Bubble
+  m_Name: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9011231912571597175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13357735, y: 0.13357735, z: 0.13357735}
+  m_LocalScale: {x: 0.14368618, y: 0.14368618, z: 0.14368618}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,14 +95,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 5
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!58 &9011231912571597168
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113,13 +113,13 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.7999998
---- !u!114 &4660268568462641969
+--- !u!114 &684628402084043032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9011231912571597175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ebe052f84977845bab6f5372e1deec, type: 3}
+  m_Script: {fileID: 11500000, guid: 3570efed742b63b4fa60905dda4f2a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 20
+  damage: 20
+  rb: {fileID: 9011231912571597169}
+  impactEffect: {fileID: 5699834140637762203, guid: 85d822d00a79ede42a86021fc7ebd911,
+    type: 3}
