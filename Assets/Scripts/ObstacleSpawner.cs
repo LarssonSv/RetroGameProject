@@ -6,9 +6,9 @@ using UnityEngine.Tilemaps;
 public class ObstacleSpawner : MonoBehaviour
 {
     [Header("Spawn Behavior")]
-    [Range(0.0f, 100.0f)][Tooltip("Chance of to actually spawn, will properly be moved to be handle by the prefab spawned")] public float spawnChance = 5.0f;
-    [Range(0.0f, 15.0f)][Tooltip("Delay before spawn start")]public float delay = 5.0f;
-    [Range(0.0f, 10.0f)][Tooltip("Delay before spawn start")]public float repeatRate = 5.0f;
+    [Range(0.0f, 100.0f)] [Tooltip("Chance of to actually spawn, will properly be moved to be handle by the prefab spawned")] public float spawnChance = 5.0f;
+    [Range(0.0f, 15.0f)] [Tooltip("Delay before spawn start")] public float delay = 5.0f;
+    [Range(0.0f, 10.0f)] [Tooltip("Delay before spawn start")] public float repeatRate = 5.0f;
 
     [Header("Setup")]
     [SerializeField] List<GameObject> obstacles = new List<GameObject>();
@@ -18,31 +18,46 @@ public class ObstacleSpawner : MonoBehaviour
 
     [Header("Spawn Position Offset from center of screen")]
     [Range(0.0f, 50.0f)] [Tooltip("Spawn offset on X-axis")] public int offsetX = 5;
+    [Range(0.0f, 50.0f)] [Tooltip("Spawn offset on Y-axis")] public int offsetY = 5;
 
     Vector3Int spawnPos;
 
     private void Start()
     {
         currentCamera = GameManager.GM.CurrentGameMode.currentCamera;
-        if(temp)
+        if (temp)
         {
             InvokeRepeating("AttemptSpawn", delay, repeatRate);
         }
 
     }
 
-    bool AttemptSpawn()
+    void AttemptSpawn()
     {
-        if(Random.Range(0.0f, 100.0f) < spawnChance)
+        if (AttemptSpawnUnderWater())
+        {
+
+        }
+
+        if (AttemptSpawnOnSurface())
+        {
+
+        }
+
+    }
+
+    bool AttemptSpawnUnderWater()
+    {
+        if (Random.Range(0.0f, 100.0f) < spawnChance)
         {
             spawnPos = Vector3Int.RoundToInt((currentCamera.transform.position + new Vector3(offsetX, 0, 0)));
             int i = 0;
 
-            while(i < 10)
+            while (i < 10)
             {
-                if(!GetCell(map,map.GetCellCenterWorld(spawnPos)))
+                if (!GetCell(map, map.GetCellCenterWorld(spawnPos)))
                 {
-                    
+
                     spawnPos.y -= 1;
                     i++;
                 }
@@ -58,7 +73,21 @@ public class ObstacleSpawner : MonoBehaviour
 
         return false;
     }
-    
+
+    bool AttemptSpawnOnSurface()
+    {
+        if (Random.Range(0.0f, 100.0f) < spawnChance)
+        {
+            spawnPos = Vector3Int.RoundToInt((new Vector3(currentCamera.transform.position.x + offsetX, offsetY, 0)));
+            map.SetTile(spawnPos, temp);
+            return true;
+
+        }
+        return false;
+    }
+
+
+
     private TileBase GetCell(Tilemap tilemap, Vector3 cellWorldPos)
     {
         return tilemap.GetTile(tilemap.WorldToCell(cellWorldPos));
@@ -67,7 +96,7 @@ public class ObstacleSpawner : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawCube(spawnPos, new Vector3(1, 1, 1));
+        Gizmos.DrawCube(spawnPos, new Vector3(0.3f, 0.3f, 0.3f));
     }
 
 }
