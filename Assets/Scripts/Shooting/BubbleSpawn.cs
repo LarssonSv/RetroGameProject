@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSpawn : MonoBehaviour
+public class BubbleSpawn : MonoBehaviour
 {
 
     public Transform firePoint;
     public GameObject bulletPrefab;
-   
+    ObjectPooler objectPooler;
+
+
+    private void Start()
+    {
+        objectPooler = ObjectPooler.Instance;
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -19,7 +26,7 @@ public class BulletSpawn : MonoBehaviour
 
     void Shoot ()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = objectPooler.SpawnFromPool("Bubble", firePoint.position, Quaternion.identity);
         
     }
 }
