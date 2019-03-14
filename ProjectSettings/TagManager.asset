@@ -7,6 +7,8 @@ TagManager:
   - GM
   - Rail
   - FirePoint
+  - Bubble
+  - Bomb
   layers:
   - Default
   - TransparentFX
