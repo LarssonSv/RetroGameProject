@@ -1,21 +1,32 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 //Author: Simon
 
 public class BoundingBoxComponent : MonoBehaviour
 {
     //Privates
     private GameObject cam;
-    private GameObject[] players = new GameObject[1];
+    private List<GameObject> players = new List<GameObject>();
     [SerializeField] float boxHeight = 5.0f;
     [SerializeField] float boxWidth = 10.0f;
 
     private void Start()
     {
         cam = this.gameObject;
-        players[0] = GameManager.GM.CurrentGameMode.currentFishPlayer;
-        players[1] = GameManager.GM.CurrentGameMode.currentBoatPlayer;
 
-        this.enabled = false;
+        if (GameManager.GM.CurrentGameMode.currentFishPlayer)
+        {
+            players.Add(GameManager.GM.CurrentGameMode.currentFishPlayer);
+        }
+
+        if (GameManager.GM.CurrentGameMode.currentBoatPlayer)
+        {
+            players.Add(GameManager.GM.CurrentGameMode.currentBoatPlayer);
+        }
+
+
+        //this.enabled = false;
     }
 
 
