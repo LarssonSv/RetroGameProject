@@ -13,11 +13,12 @@ public class CatFishController : MonoBehaviour
 
     //privates
     private Rigidbody2D rb2D;
+    private Rigidbody2D m_Rigidbody2D;
     
 
     float moveHorizontal;
     float moveVertical;
-    Transform firePoint;
+   
 
 
 
@@ -37,6 +38,8 @@ public class CatFishController : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
 
     }
+
+ 
 
     
 

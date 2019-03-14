@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4660268568462641969}
   m_Layer: 0
   m_Name: Bubble
-  m_TagString: Untagged
+  m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!58 &9011231912571597168
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,4 +131,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ebe052f84977845bab6f5372e1deec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
