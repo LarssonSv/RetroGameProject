@@ -13,7 +13,6 @@ public class FishPlayerController : MonoBehaviour
     protected float horizontal = 0f;
     protected float vertical = 0f;
     protected bool bAccelerate = false;
-    protected bool bMove = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,32 +27,21 @@ public class FishPlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical"))
+        if (Input.GetAxisRaw("VerticalFish") != 0 || (Input.GetAxisRaw("HorizontalFish") != 0))
         {
-            bMove = true;
-        }
-        else if (Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical"))
-        {
-            bMove = false;
-        }
-
-
-
-        if (Input.GetAxisRaw("Vertical") != 0 || (Input.GetAxisRaw("Horizontal") != 0))
-        {
-            vertical = Input.GetAxisRaw("Vertical") * Time.deltaTime;
-            horizontal = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+            vertical = Input.GetAxisRaw("VerticalFish") * Time.deltaTime;
+            horizontal = Input.GetAxisRaw("HorizontalFish") * Time.deltaTime;
         }
 
         float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), Time.deltaTime * rotationSpeed);
 
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("AccelerateFish"))
         {
             bAccelerate = true;
         }
-        else if (Input.GetButtonUp("Jump"))
+        else if (Input.GetButtonUp("AccelerateFish"))
         {
             bAccelerate = false;
         }
