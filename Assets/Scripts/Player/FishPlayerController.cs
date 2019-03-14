@@ -37,11 +37,13 @@ public class FishPlayerController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), Time.deltaTime * rotationSpeed);
 
 
-        if (Input.GetButtonDown("AccelerateFish"))
+        float accelerate = Input.GetAxisRaw("AccelerateFish");
+
+        if (Input.GetButtonDown("AccelerateFish") || accelerate >= 1)
         {
             bAccelerate = true;
         }
-        else if (Input.GetButtonUp("AccelerateFish"))
+        else if (Input.GetButtonUp("AccelerateFish") || accelerate <= 0)
         {
             bAccelerate = false;
         }
