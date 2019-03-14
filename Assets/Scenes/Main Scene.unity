@@ -1928,12 +1928,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095757465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2041281200}
-  m_RootOrder: 0
+  m_Father: {fileID: 2039904668}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1095757467
 BoxCollider2D:
@@ -1948,7 +1948,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031874657, y: 0}
+  m_Offset: {x: 0.031874657, y: 1.46}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1959,7 +1959,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 55.50242, y: 1}
+  m_Size: {x: 125.67, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1097303845
 GameObject:
@@ -2561,8 +2561,8 @@ MonoBehaviour:
   obstacles: []
   map: {fileID: 573052529}
   temp: {fileID: 11400000, guid: 097af6834aa69b2419334ba9ada3fcb8, type: 2}
-  offsetX: 11
-  offsetY: 5
+  offsetX: 15
+  offsetY: 3
 --- !u!1 &1447315821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,6 +3168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 573052527}
+  - {fileID: 1095757466}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3251,8 +3252,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1095757466}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
