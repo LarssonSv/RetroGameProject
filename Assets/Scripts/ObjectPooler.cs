@@ -13,18 +13,14 @@ public class ObjectPooler : MonoBehaviour {
     }
 
     public List<Pool> pools;
-
     public Dictionary<string, Queue<GameObject>> poolDictionary;
-
     public static ObjectPooler Instance;
 
     private void Awake() {
         Instance = this;
     }
 
-
     void Start () {
-
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach(Pool pool in pools) {
@@ -39,7 +35,6 @@ public class ObjectPooler : MonoBehaviour {
             }
 
             poolDictionary.Add(pool.tag, objectPool);
-
         }
 	}
 
@@ -50,7 +45,6 @@ public class ObjectPooler : MonoBehaviour {
             return null;
 
         }
-
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
@@ -69,6 +63,5 @@ public class ObjectPooler : MonoBehaviour {
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
-
     }
 }
