@@ -36,12 +36,12 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         Vector3 distance3d = player.position - transform.position;
-        Vector2 pointPlayer = new Vector2(distance3d.x, distance3d.y);
-        pointPlayer.Normalize();
+        Vector2 distance = new Vector2(distance3d.x, distance3d.y);
+        distance.Normalize();
 
         if(rb2D.velocity.magnitude < maxSpeed)
         {
-            rb2D.AddRelativeForce(pointPlayer * forceSpeed); // * Time.deltaTime
+            rb2D.AddRelativeForce(distance * forceSpeed); // * Time.deltaTime
         }
     }
 }
