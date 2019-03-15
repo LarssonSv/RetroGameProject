@@ -80,6 +80,7 @@ public class BoatPlayerController : MonoBehaviour
         {
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
+            Debug.Log("Bomb launched!");
         }
 
         BetterJump();
