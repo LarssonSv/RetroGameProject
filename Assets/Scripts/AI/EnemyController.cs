@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] protected float forceSpeed = 80;
-    [SerializeField] protected float maxSpeed = 1f;
-
+    [SerializeField] protected float forceSpeed = 30;
+    [SerializeField] protected float maxSpeed = 1.2f;
+    [SerializeField] protected float sightDistance = 6f;
+    [SerializeField] protected float forceDash = 500;
 
     protected Transform player;
     protected Rigidbody2D rb2D;
@@ -37,11 +38,18 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 distance3d = player.position - transform.position;
         Vector2 pointPlayer = new Vector2(distance3d.x, distance3d.y);
-        pointPlayer.Normalize();
 
-        if(rb2D.velocity.magnitude < maxSpeed)
+        if (rb2D.velocity.magnitude < maxSpeed)
         {
-            rb2D.AddRelativeForce(pointPlayer * forceSpeed); // * Time.deltaTime
+            if (pointPlayer.magnitude < sightDistance && player.position.x < transform.position.x)
+            {
+                pointPlayer.Normalize();
+                rb2D.AddRelativeForce(pointPlayer * forceDash);
+            }
+            else
+            {
+                rb2D.AddRelativeForce(Vector2.left * forceSpeed);
+            }
         }
     }
 }

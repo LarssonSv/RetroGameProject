@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NeutralController : MonoBehaviour
 {
-    [SerializeField] protected float forceSpeed = 80;
-    [SerializeField] protected float maxSpeed = 1f;
+    [SerializeField] protected float forceSpeed = 120;
+    [SerializeField] protected float maxSpeed = 0.7f;
 
 
     protected Transform player;
@@ -41,30 +41,14 @@ public class NeutralController : MonoBehaviour
 
         if (rb2D.velocity.magnitude < maxSpeed)
         {
-            Vector3 direction = Vector3.left + player.position;
-            float isBehindPlayer = Vector3.Dot(transform.position, direction);
-
-            Debug.DrawLine(player.position, direction * 2, Color.green);
-            print(isBehindPlayer);
-
-
-            //if(isBehindPlayer > 0)
-            //{
-            //    print("it's behind");
-            //}
-            //else
-            //{
-            //    print("it's not");
-            //}
-
-            if (bChange)
+            if (bChange && player.position.x < transform.position.x)
             {
-                rb2D.AddRelativeForce(pointPlayer * forceSpeed); // * Time.deltaTime
+                rb2D.AddRelativeForce(pointPlayer * forceSpeed);
                 bChange = false;
             }
             else
             {
-                rb2D.AddRelativeForce(Vector2.left * forceSpeed); // * Time.deltaTime
+                rb2D.AddRelativeForce(Vector2.left * forceSpeed);
                 bChange = true;
             }
         }
