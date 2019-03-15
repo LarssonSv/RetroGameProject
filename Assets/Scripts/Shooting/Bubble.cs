@@ -14,6 +14,11 @@ public class Bubble : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Invoke("DestroyObject", 5.0f);
+    }
+
+    private void Update()
+    {
         rb.velocity = transform.right * speed;
     }
 
@@ -25,12 +30,23 @@ public class Bubble : MonoBehaviour
             bomb.TakeDamage(damage);
         }
 
-       
-        Destroy(gameObject);
+        DestroyObject();
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
+        if (!collision.gameObject.transform.CompareTag("Player"))
+        {
+            DestroyObject();
+        }
+        
     }
+
+    void DestroyObject()
+    {
+        rb.velocity = Vector3.zero;
+        gameObject.SetActive(false);
+    }
+
 }
