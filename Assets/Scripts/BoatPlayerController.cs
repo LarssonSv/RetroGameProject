@@ -69,17 +69,18 @@ public class BoatPlayerController : MonoBehaviour
         moveHorizontal = Input.GetAxis("HorizontalBoat");
         moveVertical = Input.GetAxis("VerticalBoat");
 
-        if (Input.GetButtonDown("Jump") && onWaterSurface == true)
+        if (Input.GetButtonDown("BoatJump") && onWaterSurface == true)
         {
 
             rb2D.AddRelativeForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
 
         }
 
-        if (Input.GetButton("Fire1") && Time.time > nextBomb)
+        if (Input.GetButton("BoatBombDrop") && Time.time > nextBomb)
         {
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
+            Debug.Log("Bomb");
         }
 
         BetterJump();
@@ -99,7 +100,6 @@ public class BoatPlayerController : MonoBehaviour
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
-
 
 
 

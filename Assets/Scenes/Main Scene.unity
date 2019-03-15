@@ -1929,7 +1929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095757465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039904668}
@@ -2493,10 +2493,11 @@ MonoBehaviour:
   currentFishPlayer: {fileID: 0}
   currentBoatPlayer: {fileID: 0}
   currentCamera: {fileID: 2041281197}
-  PlayerFishPrefab: {fileID: 0}
+  PlayerFishPrefab: {fileID: 7517377031983070045, guid: 5b298e3123d8ada459850606de6f0840,
+    type: 3}
   PlayerBoatPrefab: {fileID: 6920138440220548276, guid: 6426eb45981fb39418e73a9923b76a7c,
     type: 3}
-  PlayerFishStart: {fileID: 0}
+  PlayerFishStart: {fileID: 2142078255}
   PlayerBoatStart: {fileID: 1710463669}
   gameOverUI: {fileID: 0}
 --- !u!114 &1410498814
@@ -2520,10 +2521,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410498812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.4338, y: 71.79707, z: -4.388351}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1710463669}
+  - {fileID: 2142078255}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2542,6 +2544,10 @@ MonoBehaviour:
   pools:
   - tag: Bubble
     prefab: {fileID: 975546104411136635, guid: 80b98033e49751a4dab6a245866a825b, type: 3}
+    size: 10
+  - tag: Bomb
+    prefab: {fileID: 5699834140637762203, guid: ca6ce918f1a4cc04e9d0569a561e942c,
+      type: 3}
     size: 10
 --- !u!114 &1410498817
 MonoBehaviour:
@@ -2849,8 +2855,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710463668}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94.09, y: -68.86, z: 5.888351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.79, y: 3.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1410498815}
@@ -3250,7 +3256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041281197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: -10}
+  m_LocalPosition: {x: -15.54, y: 0.72, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3269,7 +3275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rail: {fileID: 1333185364}
-  speed: 1.5
+  speed: 1
   mode: 1
   isReversed: 0
   isLooping: 1
@@ -3287,7 +3293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1121c9fc522c45346b5d4f34ca2315fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxHeight: 5
+  boxHeight: 15
   boxWidth: 10
 --- !u!1 &2094419604
 GameObject:
@@ -3317,5 +3323,35 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1333185365}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2142078254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142078255}
+  m_Layer: 0
+  m_Name: FishStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2142078255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142078254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.88, y: -1.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1410498815}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
