@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] protected float forceSpeed = 30;
-    [SerializeField] protected float maxSpeed = 1.2f;
+    [SerializeField] protected float forceSpeed = 15;
+    [SerializeField] protected float maxSpeed = 1f;
     [SerializeField] protected float sightDistance = 6f;
-    [SerializeField] protected float forceDash = 500;
+    [SerializeField] protected float forceDash = 350;
 
     protected Transform player;
     protected Rigidbody2D rb2D;
