@@ -212,7 +212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER
+  m_Text: WINSCREEN
 --- !u!222 &322773174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -380,6 +380,36 @@ Transform:
   m_Father: {fileID: 1333185365}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &531434244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531434245}
+  m_Layer: 0
+  m_Name: FishStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &531434245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531434244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -84.25, y: -71.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1410498815}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540246000
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +423,7 @@ GameObject:
   - component: {fileID: 540246003}
   - component: {fileID: 540246002}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: WinScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1690,15 +1720,15 @@ RectTransform:
   m_GameObject: {fileID: 712033144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.465551, y: 5.4997, z: 1}
+  m_LocalScale: {x: 12.325468, y: 5.362208, z: 1}
   m_Children: []
   m_Father: {fileID: 540246001}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -1136, y: -440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712033146
 MonoBehaviour:
@@ -1764,15 +1794,15 @@ RectTransform:
   m_GameObject: {fileID: 783833427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.959611, y: 5.4675, z: 5.4675}
+  m_LocalScale: {x: 12.408096, y: 5.3974485, z: 5.4675}
   m_Children: []
   m_Father: {fileID: 1331294511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -1136, y: -440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783833429
 MonoBehaviour:
@@ -2493,10 +2523,11 @@ MonoBehaviour:
   currentFishPlayer: {fileID: 0}
   currentBoatPlayer: {fileID: 0}
   currentCamera: {fileID: 2041281197}
-  PlayerFishPrefab: {fileID: 0}
+  PlayerFishPrefab: {fileID: 7517377031983070045, guid: 5b298e3123d8ada459850606de6f0840,
+    type: 3}
   PlayerBoatPrefab: {fileID: 6920138440220548276, guid: 6426eb45981fb39418e73a9923b76a7c,
     type: 3}
-  PlayerFishStart: {fileID: 0}
+  PlayerFishStart: {fileID: 531434245}
   PlayerBoatStart: {fileID: 1710463669}
   gameOverUI: {fileID: 0}
 --- !u!114 &1410498814
@@ -2524,6 +2555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1710463669}
+  - {fileID: 531434245}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2541,8 +2573,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Bubble
-    prefab: {fileID: 975546104411136635, guid: 80b98033e49751a4dab6a245866a825b, type: 3}
-    size: 10
+    prefab: {fileID: 9011231912571597175, guid: 32f3686210767ea46ba84f7cbbafed62,
+      type: 3}
+    size: 20
 --- !u!114 &1410498817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2850,7 +2883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710463668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94.09, y: -68.86, z: 5.888351}
+  m_LocalPosition: {x: -84.81, y: -68.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1410498815}

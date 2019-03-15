@@ -26,7 +26,7 @@ public class BubbleSpawn : MonoBehaviour
 
     void Shoot ()
     {
-        GameObject bullet = objectPooler.SpawnFromPool("Bubble", firePoint.position, Quaternion.identity);
+        GameObject bullet = objectPooler.SpawnFromPool("Bubble", firePoint.position, transform.rotation);
         
     }
 }
