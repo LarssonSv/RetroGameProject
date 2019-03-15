@@ -17,7 +17,7 @@ public class BubbleSpawn : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("ShootBubble"))
         {
             Debug.Log("SHOOT");
             Shoot();
