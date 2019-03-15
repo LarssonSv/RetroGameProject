@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
+
+    //Publics
     public int startingHealth = 3;
     public int currentHealth;
-    public Image damageImage;
+    public SpriteRenderer damageImage;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
-    BoatPlayerController boat;
-
+    //Privats
     private bool isDead;
     private bool damaged;
-
 
     void Start()
     {
         currentHealth = startingHealth;
-        boat = GetComponent<BoatPlayerController>();
+        damageImage = GetComponent<SpriteRenderer>();
     }
 
 
@@ -43,6 +43,7 @@ public class HealthScript : MonoBehaviour
         currentHealth -= amount;
         if(currentHealth <= 0 && !isDead)
         {
+            Debug.Log("Took dmg!" + currentHealth);
             Death();
         }
     }
@@ -50,9 +51,9 @@ public class HealthScript : MonoBehaviour
     void Death()
     {
         isDead = true;
-        boat.enabled = false;
+        Destroy(gameObject);
     }
 
 
-        
+
 }
