@@ -33,17 +33,17 @@ public class Bomb : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.CompareTag("Player"))
+        HealthScript playerHealth = collision.transform.gameObject.GetComponent<HealthScript>();
+        if (playerHealth != null)
         {
-            HealthScript playerHealth = collision.transform.gameObject.GetComponent<HealthScript>();
-
             playerHealth.TakeDamage(1);
-
+            Debug.Log("hit");
 
         }
     }
+
 
     private void Update()
     {

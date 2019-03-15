@@ -56,12 +56,12 @@ public class BoatPlayerController : MonoBehaviour
         if (Input.GetAxis("HorizontalBoat") > 0)
         {
             speedModifier = true;
-            speed = 4f;
+            speed = 13f;
         }
         else
         {
             speedModifier = false;
-            speed = 8f;
+            speed = 16f;
         }
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);

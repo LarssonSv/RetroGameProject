@@ -2543,7 +2543,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Bubble
-    prefab: {fileID: 975546104411136635, guid: 80b98033e49751a4dab6a245866a825b, type: 3}
+    prefab: {fileID: 9011231912571597175, guid: 32f3686210767ea46ba84f7cbbafed62,
+      type: 3}
     size: 10
   - tag: Bomb
     prefab: {fileID: 5699834140637762203, guid: ca6ce918f1a4cc04e9d0569a561e942c,
