@@ -35,7 +35,7 @@ public class BoatPlayerController : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 0.6f;
+        float distance = 1f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, waterSurface);
 
