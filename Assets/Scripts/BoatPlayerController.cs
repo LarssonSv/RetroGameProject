@@ -76,7 +76,7 @@ public class BoatPlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetButton("BoatBombDrop") && Time.time > nextBomb)
+        if (Input.GetButton("BoatBombDrop") && onWaterSurface && Time.time > nextBomb)
         {
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
