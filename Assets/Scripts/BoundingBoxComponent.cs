@@ -35,6 +35,7 @@ public class BoundingBoxComponent : MonoBehaviour
 
         foreach(GameObject x in players)
         {
+            //BoudingBox Y
             if (x.transform.position.y < (cam.transform.position.y - boxHeight))
             {
                 x.transform.position = new Vector3(x.transform.position.x, (cam.transform.position.y - boxHeight), 0.0f);
@@ -55,7 +56,8 @@ public class BoundingBoxComponent : MonoBehaviour
             }
         }
 
-       
+      
+
 
 
     }
