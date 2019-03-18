@@ -7,7 +7,7 @@ public class NeutralController : MonoBehaviour
 {
     [SerializeField] protected float forceSpeed = 120;
     [SerializeField] protected float maxSpeed = 0.7f;
-
+    [SerializeField] protected GameObject bot;
 
     protected Transform player;
     protected Rigidbody2D rb2D; 
@@ -29,6 +29,12 @@ public class NeutralController : MonoBehaviour
             if (gameMode)
             {
                 player = gameMode.currentFishPlayer.transform;
+            }
+            
+            BoundingBoxComponent Box = currentGM.GetComponent<BoundingBoxComponent>();
+            if(Box)
+            {      
+                Box.AddBot(bot);
             }
         }
     }
@@ -53,5 +59,10 @@ public class NeutralController : MonoBehaviour
                 bChange = true;
             }
         }
+    }
+
+    public void Deactivate()
+    {
+        //SetA
     }
 }
