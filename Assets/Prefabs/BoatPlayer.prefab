@@ -130,7 +130,7 @@ MonoBehaviour:
   jumpHeight: {x: 0, y: 8}
   fallmultiplier: 2.5
   lowJumpMultiplier: 2
-  bombRate: 3
+  bombRate: 2
 --- !u!50 &6920138440220548275
 Rigidbody2D:
   serializedVersion: 4
@@ -166,6 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   currentHealth: 0
-  damageImage: {fileID: 0}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
