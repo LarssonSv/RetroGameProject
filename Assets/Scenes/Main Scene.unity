@@ -212,7 +212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER
+  m_Text: WINSCREEN
 --- !u!222 &322773174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 540246003}
   - component: {fileID: 540246002}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: WinScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1680,7 +1680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &712033145
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2499,7 +2499,7 @@ MonoBehaviour:
     type: 3}
   PlayerFishStart: {fileID: 2142078255}
   PlayerBoatStart: {fileID: 1710463669}
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 540246000}
 --- !u!114 &1410498814
 MonoBehaviour:
   m_ObjectHideFlags: 0
