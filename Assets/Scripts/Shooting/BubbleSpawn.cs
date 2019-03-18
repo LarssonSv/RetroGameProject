@@ -9,8 +9,7 @@ public class BubbleSpawn : MonoBehaviour
     public GameObject bulletPrefab;
     ObjectPooler objectPooler;
 
-    public float fireRate = 2.0f;
-    private float nextFire = 0.0f;
+
 
 
     private void Start()
@@ -23,13 +22,17 @@ public class BubbleSpawn : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("SHOOT");
+
             Shoot();
+
         }
     }
 
-    void Shoot ()
+    void Shoot()
+
     {
         GameObject bullet = objectPooler.SpawnFromPool("Bubble", firePoint.position, transform.rotation);
-        
     }
+
+   
 }
