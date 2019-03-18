@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] protected float forceDash = 350;
 
     protected Transform player;
-    protected Rigidbody2D rb2D;
+    protected Rigidbody2D rb2D; 
 
     private void OnEnable()
     {
