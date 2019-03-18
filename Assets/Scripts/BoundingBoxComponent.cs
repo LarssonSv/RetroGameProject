@@ -11,6 +11,7 @@ public class BoundingBoxComponent : MonoBehaviour
     public List<GameObject> bots = new List<GameObject>();
     [SerializeField] float boxHeight = 5.0f;
     [SerializeField] float boxWidth = 10.0f;
+    [SerializeField] float distanceDespawnBot = 4.0f;
 
     private void Start()
     {
@@ -76,9 +77,9 @@ public class BoundingBoxComponent : MonoBehaviour
         foreach(GameObject x in bots)
         {
             //BoundingBox X
-            if (x.transform.position.x < (cam.transform.position.x - boxWidth))
+            if (x.transform.position.x < (cam.transform.position.x - boxWidth - distanceDespawnBot))
             {
-                
+                x.SetActive(false);
             }
         }
     }
