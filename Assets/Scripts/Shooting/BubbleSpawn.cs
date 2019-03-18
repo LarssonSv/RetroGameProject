@@ -9,6 +9,9 @@ public class BubbleSpawn : MonoBehaviour
     public GameObject bulletPrefab;
     ObjectPooler objectPooler;
 
+    public float fireRate = 2.0f;
+    private float nextFire = 0.0f;
+
 
     private void Start()
     {
