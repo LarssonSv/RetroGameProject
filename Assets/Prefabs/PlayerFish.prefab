@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 300086462}
   - component: {fileID: 2788567932118751647}
   m_Layer: 0
-  m_Name: FishPlayer
+  m_Name: PlayerFish
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 2
-  forceSpeed: 55
-  maxSpeed: 3
+  forceSpeed: 40
+  maxSpeed: 1
 --- !u!114 &300086462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   firePoint: {fileID: 1819889227}
   bulletPrefab: {fileID: 9011231912571597175, guid: 32f3686210767ea46ba84f7cbbafed62,
     type: 3}
+  fireRate: 2
 --- !u!70 &2788567932118751647
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
