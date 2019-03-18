@@ -22,5 +22,6 @@ public class WinScreenUI : MonoBehaviour
     {
         Application.Quit();
 
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
