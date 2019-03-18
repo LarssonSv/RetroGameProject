@@ -10,7 +10,7 @@ public class NeutralController : MonoBehaviour
 
 
     protected Transform player;
-    protected Rigidbody2D rb2D;
+    protected Rigidbody2D rb2D; 
     protected bool bChange = false; 
 
     private void OnEnable()
