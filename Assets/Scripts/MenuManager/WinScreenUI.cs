@@ -15,6 +15,7 @@ public class WinScreenUI : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
     
 
@@ -22,5 +23,6 @@ public class WinScreenUI : MonoBehaviour
     {
         Application.Quit();
 
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
