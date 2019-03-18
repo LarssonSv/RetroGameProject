@@ -212,7 +212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER
+  m_Text: WINSCREEN
 --- !u!222 &322773174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 540246003}
   - component: {fileID: 540246002}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: WinScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1680,7 +1680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &712033145
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1948,7 +1948,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031874657, y: 1.46}
+  m_Offset: {x: 0.031874657, y: 2.22}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1959,7 +1959,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 125.67, y: 1}
+  m_Size: {x: 125.67, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &1097303845
 GameObject:
@@ -2499,7 +2499,7 @@ MonoBehaviour:
     type: 3}
   PlayerFishStart: {fileID: 2142078255}
   PlayerBoatStart: {fileID: 1710463669}
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 540246000}
 --- !u!114 &1410498814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2543,7 +2543,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Bubble
-    prefab: {fileID: 975546104411136635, guid: 80b98033e49751a4dab6a245866a825b, type: 3}
+    prefab: {fileID: 9011231912571597175, guid: 32f3686210767ea46ba84f7cbbafed62,
+      type: 3}
     size: 10
   - tag: Bomb
     prefab: {fileID: 5699834140637762203, guid: ca6ce918f1a4cc04e9d0569a561e942c,
@@ -2568,7 +2569,7 @@ MonoBehaviour:
   map: {fileID: 573052529}
   temp: {fileID: 11400000, guid: 097af6834aa69b2419334ba9ada3fcb8, type: 2}
   offsetX: 15
-  offsetY: 3
+  offsetY: 2
 --- !u!1 &1447315821
 GameObject:
   m_ObjectHideFlags: 0

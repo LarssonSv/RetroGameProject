@@ -40,6 +40,7 @@ public class GameMode : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("GAME OVER");
+        Time.timeScale = 0;
         gameOverUI.SetActive(true);
     }
        

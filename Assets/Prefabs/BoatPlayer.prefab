@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6920138440220548273}
   - component: {fileID: 6920138440220548278}
   - component: {fileID: 6920138440220548275}
+  - component: {fileID: 1835846418644583792}
   m_Layer: 0
   m_Name: BoatPlayer
-  m_TagString: Player
+  m_TagString: BoatPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6920138440220548276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.51, y: 0.89, z: 4.7421875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3237225d06e63d49984f30723d6a4a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93ae3df51f58c1d4ebbedc96cc79f19d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,18 +96,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0032669902, y: -0.1290468}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 1.1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1.07, y: 1.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.07, y: 1.1}
+  m_Size: {x: 0.5864818, y: 0.3779899}
   m_EdgeRadius: 0
 --- !u!114 &6920138440220548278
 MonoBehaviour:
@@ -129,7 +130,7 @@ MonoBehaviour:
   jumpHeight: {x: 0, y: 8}
   fallmultiplier: 2.5
   lowJumpMultiplier: 2
-  bombRate: 3
+  bombRate: 2
 --- !u!50 &6920138440220548275
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +152,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1835846418644583792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920138440220548276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc36c21983cbdd4095a1d7efeefe6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  currentHealth: 0
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}

@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour
 
     Vector2 endPosition;
     bool hit = false;
-    
+
 
     private void Start()
     {
@@ -29,21 +29,35 @@ public class Bomb : MonoBehaviour
             hit = true;
             endPosition = new Vector2(transform.position.x, 3.0f);
             AddBubble();
-            
+
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.CompareTag("Player"))
+        if (collision.gameObject.transform.CompareTag("BoatPlayer"))
         {
             HealthScript playerHealth = collision.transform.gameObject.GetComponent<HealthScript>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1);
+                Debug.Log("hit");
+                gameObject.SetActive(false);
+            }
+        }
 
-            playerHealth.TakeDamage(1);
-
-
+        if (collision.gameObject.transform.CompareTag("Player"))
+        {
+            HealthScript playerHealth = collision.transform.gameObject.GetComponent<HealthScript>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1);
+                Debug.Log("hit");
+                gameObject.SetActive(false);
+            }
         }
     }
+
 
     private void Update()
     {

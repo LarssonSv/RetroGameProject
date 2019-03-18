@@ -9,6 +9,8 @@ TagManager:
   - FirePoint
   - Bubble
   - Bomb
+  - BoatPlayer
+  - FishPlayer
   layers:
   - Default
   - TransparentFX

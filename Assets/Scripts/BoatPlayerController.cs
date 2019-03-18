@@ -35,7 +35,7 @@ public class BoatPlayerController : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 0.6f;
+        float distance = 1f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, waterSurface);
 
@@ -56,12 +56,12 @@ public class BoatPlayerController : MonoBehaviour
         if (Input.GetAxis("HorizontalBoat") > 0)
         {
             speedModifier = true;
-            speed = 4f;
+            speed = 13f;
         }
         else
         {
             speedModifier = false;
-            speed = 8f;
+            speed = 16f;
         }
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
@@ -76,7 +76,7 @@ public class BoatPlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetButton("BoatBombDrop") && Time.time > nextBomb)
+        if (Input.GetButton("BoatBombDrop") && onWaterSurface && Time.time > nextBomb)
         {
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 1, 0), bombPosition);
