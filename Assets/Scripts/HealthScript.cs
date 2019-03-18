@@ -12,7 +12,7 @@ public class HealthScript : MonoBehaviour
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
-    //Privats
+    //Privates
     private bool isDead;
     private bool damaged;
 
