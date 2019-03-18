@@ -45,6 +45,17 @@ public class Bomb : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+
+        if (collision.gameObject.transform.CompareTag("Player"))
+        {
+            HealthScript playerHealth = collision.transform.gameObject.GetComponent<HealthScript>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1);
+                Debug.Log("hit");
+                gameObject.SetActive(false);
+            }
+        }
     }
 
 

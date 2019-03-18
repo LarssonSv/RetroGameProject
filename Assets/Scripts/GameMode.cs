@@ -16,7 +16,7 @@ public class GameMode : MonoBehaviour
     [SerializeField] Transform PlayerFishStart;
     [SerializeField] Transform PlayerBoatStart;
     [Header("UI")]
-    [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject winScreenUI;
 
     public void StartUp()
     {
@@ -40,7 +40,8 @@ public class GameMode : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("GAME OVER");
-        gameOverUI.SetActive(true);
+        Time.timeScale = 0;
+        winScreenUI.SetActive(true);
     }
        
  

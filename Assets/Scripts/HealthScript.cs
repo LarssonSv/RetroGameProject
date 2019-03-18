@@ -36,7 +36,10 @@ public class HealthScript : MonoBehaviour
     {
         isDead = true;
         Destroy(gameObject);
-    }
+
+        GameObject.Find("GameManager").GetComponent<GameMode>().EndGame();
+            
+     }
 
 
 
