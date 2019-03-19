@@ -6,15 +6,11 @@ using UnityEngine.SceneManagement;
 public class WinScreenUI : MonoBehaviour
 {
  
-    public void Quit()
-    {
-        Debug.Log("QUIT CLICKED");
-        QuitGame();
-    }
+   
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1;
     }
     
