@@ -1,5 +1,6 @@
 ﻿#pragma warning disable 0649  //Disabled Warning for unity-editor bug
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMode : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class GameMode : MonoBehaviour
     [Header("Setup Players Spawn")]
     [SerializeField] Transform PlayerFishStart;
     [SerializeField] Transform PlayerBoatStart;
-    [Header("UI")]
-    [SerializeField] GameObject winScreenUI;
+ 
+
 
     public void StartUp()
     {
@@ -41,7 +42,7 @@ public class GameMode : MonoBehaviour
     {
         Debug.Log("GAME OVER");
         Time.timeScale = 0;
-        winScreenUI.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
        
  
