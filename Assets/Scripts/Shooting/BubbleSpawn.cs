@@ -9,6 +9,9 @@ public class BubbleSpawn : MonoBehaviour
     public GameObject bulletPrefab;
     ObjectPooler objectPooler;
 
+    public float fireRate = 2.0f;
+    private float nextFire = 0.0f;
+
    
 
 
@@ -19,11 +22,13 @@ public class BubbleSpawn : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("ShootBubble"))
+        if (Input.GetButtonDown("ShootBubble") && Time.time > nextFire)
         {
             Debug.Log("SHOOT");
 
-            
+
+            nextFire = Time.time + fireRate;
+
             GameObject bullet = objectPooler.SpawnFromPool("Bubble", firePoint.position, transform.rotation);
         }
     }
