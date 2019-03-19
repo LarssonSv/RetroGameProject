@@ -55,7 +55,7 @@ public class Bomb : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.transform.CompareTag("Player"))
+        if (collision.gameObject.transform.CompareTag("FishPlayer"))
         {
             HealthScript playerHealth = collision.transform.gameObject.GetComponent<HealthScript>();
             if (playerHealth != null)
