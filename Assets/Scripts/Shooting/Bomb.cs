@@ -33,9 +33,10 @@ public class Bomb : MonoBehaviour
         if (health <= 0)
         {
             hit = true;
-            endPosition = new Vector2(transform.position.x, 3.0f);
-            source.PlayOneShot(barrelSurface, 1f);
+            endPosition = new Vector2(transform.position.x, 3.5f);
             AddBubble();
+            source.PlayOneShot(barrelSurface, 1f);
+            
 
 
         }
