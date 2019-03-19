@@ -14,6 +14,12 @@ public class Bomb : MonoBehaviour
     Vector2 endPosition;
     bool hit = false;
 
+    public AudioClip barrelSurface;
+    public AudioClip fishHurt;
+    public AudioClip BoatHurt;
+
+    private AudioSource source;
+
 
     private void Start()
     {
@@ -28,7 +34,9 @@ public class Bomb : MonoBehaviour
         {
             hit = true;
             endPosition = new Vector2(transform.position.x, 3.0f);
+            source.PlayOneShot(barrelSurface, 1f);
             AddBubble();
+
 
         }
     }
@@ -41,6 +49,7 @@ public class Bomb : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(1);
+                source.PlayOneShot(BoatHurt, 1f);
                 Debug.Log("hit");
                 gameObject.SetActive(false);
             }
@@ -52,6 +61,7 @@ public class Bomb : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(1);
+                source.PlayOneShot(fishHurt, 1f);
                 Debug.Log("hit");
                 gameObject.SetActive(false);
             }

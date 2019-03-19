@@ -12,12 +12,16 @@ public class BubbleSpawn : MonoBehaviour
     public float fireRate = 2.0f;
     private float nextFire = 0.0f;
 
+    public AudioClip bubbleShoot;
+    private AudioSource source;
+
    
 
 
     private void Start()
     {
         objectPooler = ObjectPooler.Instance;
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,8 +32,9 @@ public class BubbleSpawn : MonoBehaviour
 
 
             nextFire = Time.time + fireRate;
-
             GameObject bullet = objectPooler.SpawnFromPool("Bubble", firePoint.position, transform.rotation);
+            source.PlayOneShot(bubbleShoot, 1f);
+
         }
     }
 
