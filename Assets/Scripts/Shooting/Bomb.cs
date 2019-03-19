@@ -18,12 +18,13 @@ public class Bomb : MonoBehaviour
     public AudioClip fishHurt;
     public AudioClip BoatHurt;
 
-    private AudioSource source;
+    public AudioSource source;
 
 
     private void Start()
     {
         spriteRender = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
@@ -33,7 +34,7 @@ public class Bomb : MonoBehaviour
         if (health <= 0)
         {
             hit = true;
-            endPosition = new Vector2(transform.position.x, 3.5f);
+            endPosition = new Vector2(transform.position.x, 4f);
             AddBubble();
             source.PlayOneShot(barrelSurface, 1f);
             
