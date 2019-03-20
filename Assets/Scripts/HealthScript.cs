@@ -56,6 +56,11 @@ public class HealthScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
+        else
+        {
+            isDead = true;
+            Destroy(gameObject);
+        }
 
                 
         

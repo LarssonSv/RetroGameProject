@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7023280307620471534}
   - component: {fileID: 7023280307620471533}
   - component: {fileID: 7023280307620471529}
+  - component: {fileID: 1192536169703397010}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -145,3 +146,19 @@ MonoBehaviour:
   maxSpeed: 1
   sightDistance: 6
   forceDash: 325
+--- !u!114 &1192536169703397010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7023280307620471532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc36c21983cbdd4095a1d7efeefe6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  currentHealth: 0
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
