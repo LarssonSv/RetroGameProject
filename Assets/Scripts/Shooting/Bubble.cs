@@ -30,6 +30,17 @@ public class Bubble : MonoBehaviour
             bomb.TakeDamage(damage);
         }
 
+        if (hitInfo.gameObject.transform.CompareTag("Enemy"))
+        {
+            HealthScript playerHealth = hitInfo.transform.gameObject.GetComponent<HealthScript>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1);
+                
+                Debug.Log("hit enemy");
+                gameObject.SetActive(false);
+            }
+        }
 
         DestroyObject();
     }
