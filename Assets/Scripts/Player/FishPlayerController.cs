@@ -43,6 +43,7 @@ public class FishPlayerController : MonoBehaviour
         if (Input.GetButtonDown("AccelerateFish") || accelerate >= 1)
         {
             bAccelerate = true;
+            rb2D.AddRelativeForce(Vector2.left * -forceSpeed * Time.deltaTime);
         }
         else if (Input.GetButtonUp("AccelerateFish") || accelerate <= 0)
         {
@@ -53,5 +54,10 @@ public class FishPlayerController : MonoBehaviour
         {
             rb2D.AddRelativeForce(Vector2.left * -forceSpeed * Time.deltaTime);
         }
+    }
+
+    public void ResetVelocity()
+    {
+       rb2D.velocity = new Vector2(0f, 0f);
     }
 }
