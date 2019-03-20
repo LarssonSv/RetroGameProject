@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class HealthScript : MonoBehaviour
 {
@@ -34,10 +36,29 @@ public class HealthScript : MonoBehaviour
 
     void Death()
     {
-        isDead = true;
-        Destroy(gameObject);
+        if (gameObject.tag == "FishPlayer" && currentHealth <= 0)
+        {
+            isDead = true;
+            Destroy(gameObject);
 
-        GameObject.Find("GameManager").GetComponent<GameMode>().EndGame();
+            Debug.Log("FISH WON");
+            Time.timeScale = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
+
+        if (gameObject.tag == "BoatPlayer" && currentHealth <= 0)
+        {
+            isDead = true;
+            Destroy(gameObject);
+
+            Debug.Log("BOAT WON");
+            Time.timeScale = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
+
+                
+        
             
      }
 
