@@ -14,6 +14,7 @@ public class BoatPlayerController : MonoBehaviour
     public Vector2 jumpHeight;
     public float fallmultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
+    public Animator animator;
 
     public AudioClip BarrelDropSound;
     private AudioSource source;
@@ -30,6 +31,8 @@ public class BoatPlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         objectPooler = ObjectPooler.Instance;
         source = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+
         
     }
 
@@ -83,6 +86,7 @@ public class BoatPlayerController : MonoBehaviour
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 2, 0), bombPosition);
             source.PlayOneShot(BarrelDropSound, 1f);
+            animator.SetBool("IsDropping", true);
             Debug.Log("Bomb");
         }
 

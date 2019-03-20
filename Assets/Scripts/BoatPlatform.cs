@@ -6,6 +6,8 @@ public class BoatPlatform : MonoBehaviour
 {
     private GameObject target = null;
     private Vector3 offset;
+
+
     void Start()
     {
         target = null;
