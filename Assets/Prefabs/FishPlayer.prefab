@@ -167,7 +167,7 @@ MonoBehaviour:
   firePoint: {fileID: 1819889227}
   bulletPrefab: {fileID: 9011231912571597175, guid: 32f3686210767ea46ba84f7cbbafed62,
     type: 3}
-  fireRate: 2
+  fireRate: 0
   bubbleShoot: {fileID: 8300000, guid: 4157bb47c9aa9a243a1374018c79b60c, type: 3}
 --- !u!70 &2788567932118751647
 CapsuleCollider2D:
