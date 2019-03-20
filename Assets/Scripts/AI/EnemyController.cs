@@ -23,10 +23,10 @@ public class EnemyController : MonoBehaviour
     {
         GameManager currentGM = GameManager.GM;
 
-        if(currentGM)
+        if (currentGM)
         {
             GameMode gameMode = currentGM.CurrentGameMode;
-            if(gameMode)
+            if (gameMode)
             {
                 player = gameMode.currentFishPlayer.transform;
             }
@@ -52,4 +52,5 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    
 }

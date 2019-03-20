@@ -144,8 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceSpeed: 15
   maxSpeed: 1
-  sightDistance: 6
-  forceDash: 150
+  sightDistance: 4
+  forceDash: 120
 --- !u!114 &1192536169703397010
 MonoBehaviour:
   m_ObjectHideFlags: 0
