@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8936895441283100279}
   - component: {fileID: 8375699521423476281}
   - component: {fileID: 3332718825935754726}
+  - component: {fileID: 2068660316}
   m_Layer: 10
   m_Name: Bomb
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 5699834140637762203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.845, y: -1.52, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 65e935895ab1dcf4ea58ea0bbd3ff600, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4335ee5ff9f40740a19b38c2ab82cbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,9 +99,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10119587, y: -0.07589683}
+  m_Offset: {x: 0.014224729, y: 0.008378565}
   serializedVersion: 2
-  m_Radius: 0.80358756
+  m_Radius: 0.09823948
 --- !u!50 &5699834140637762204
 Rigidbody2D:
   serializedVersion: 4
@@ -140,6 +141,9 @@ MonoBehaviour:
   barrelSurface: {fileID: 8300000, guid: 0a268ecfa284f2245b2c99506096275a, type: 3}
   fishHurt: {fileID: 8300000, guid: 6963e76bf143daf4ba1766204e52df2f, type: 3}
   BoatHurt: {fileID: 8300000, guid: f72da92eaafdfdd4e8bfc539e0cae1b4, type: 3}
+  source: {fileID: 0}
+  animator: {fileID: 2068660316}
+  animation: {fileID: 0}
 --- !u!82 &8936895441283100279
 AudioSource:
   m_ObjectHideFlags: 0
@@ -428,3 +432,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2068660316
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699834140637762203}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a132864b806edcc44a584fd4243a0d53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

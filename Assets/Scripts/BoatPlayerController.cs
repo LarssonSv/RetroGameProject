@@ -15,6 +15,7 @@ public class BoatPlayerController : MonoBehaviour
     public float fallmultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public Animator animator;
+    public Vector3 bombDrop;
 
     public AudioClip BarrelDropSound;
     private AudioSource source;
@@ -84,10 +85,14 @@ public class BoatPlayerController : MonoBehaviour
         if (Input.GetButton("BoatBombDrop") && onWaterSurface && Time.time > nextBomb)
         {
             nextBomb = Time.time + bombRate;
-            objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x, transform.position.y - 2, 0), bombPosition);
+            objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x + 2, transform.position.y - 2, 0), bombPosition);
             source.PlayOneShot(BarrelDropSound, 1f);
             animator.SetBool("IsDropping", true);
             Debug.Log("Bomb");
+        }
+        else
+        {
+            animator.SetBool("IsDropping", false);
         }
 
         BetterJump();
