@@ -56,13 +56,13 @@ public class HealthScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
-        else
+        if (gameObject.tag == "Enemy" && currentHealth <= 0)
         {
+            Debug.Log("ENEMY HIT");
+
             isDead = true;
             Destroy(gameObject);
-        }
-
-                
+        }      
         
             
      }
