@@ -27,7 +27,6 @@ public class BoundingBoxComponent : MonoBehaviour
             players.Add(GameManager.GM.CurrentGameMode.currentBoatPlayer);
         }
 
-        
 
         //this.enabled = false;
     }
@@ -56,21 +55,25 @@ public class BoundingBoxComponent : MonoBehaviour
             if (x.transform.position.y < (cam.transform.position.y - boxHeight))
             {
                 x.transform.position = new Vector3(x.transform.position.x, (cam.transform.position.y - boxHeight), 0.0f);
+                PlayerColliding(x);
             }
             else if (x.transform.position.y > (cam.transform.position.y + boxHeight))
             {
                 x.transform.position = new Vector3(x.transform.position.x, (cam.transform.position.y + boxHeight), 0.0f);
+                PlayerColliding(x);
             }
             
             //BoundingBox X
             if (x.transform.position.x < (cam.transform.position.x - boxWidth))
             {
                 x.transform.position = new Vector3((cam.transform.position.x - boxWidth), x.transform.position.y, 0.0f);
+                PlayerColliding(x);
             }
             //right
             else if (x.transform.position.x > (cam.transform.position.x + boxWidth))
             {
                 x.transform.position = new Vector3((cam.transform.position.x + boxWidth), x.transform.position.y, 0.0f);
+                PlayerColliding(x);
             }
         }
 
@@ -81,6 +84,15 @@ public class BoundingBoxComponent : MonoBehaviour
             {
                 x.SetActive(false);
             }
+        }
+    }
+    
+    private void PlayerColliding(GameObject x)
+    {
+        if (GameObject.ReferenceEquals(x, players[0]))
+        {
+            FishPlayerController fishPlayerController = x.GetComponent<FishPlayerController>();
+            fishPlayerController.ResetVelocity();
         }
     }
 }
