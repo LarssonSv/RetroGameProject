@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8375699521423476281}
   - component: {fileID: 3332718825935754726}
   - component: {fileID: 2068660316}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,8 +142,6 @@ MonoBehaviour:
   fishHurt: {fileID: 8300000, guid: 6963e76bf143daf4ba1766204e52df2f, type: 3}
   BoatHurt: {fileID: 8300000, guid: f72da92eaafdfdd4e8bfc539e0cae1b4, type: 3}
   source: {fileID: 0}
-  animator: {fileID: 2068660316}
-  animation: {fileID: 0}
 --- !u!82 &8936895441283100279
 AudioSource:
   m_ObjectHideFlags: 0
@@ -440,7 +438,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5699834140637762203}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a132864b806edcc44a584fd4243a0d53, type: 2}
   m_CullingMode: 0
