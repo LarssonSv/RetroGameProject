@@ -17,6 +17,8 @@ public class BoatPlayerController : MonoBehaviour
     public Animator animator;
     public Vector3 bombDrop;
 
+    List<GameObject> currentBombs = new List<GameObject>();
+
     public AudioClip BarrelDropSound;
     private AudioSource source;
 
@@ -34,7 +36,6 @@ public class BoatPlayerController : MonoBehaviour
         source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        
     }
 
     void IsFloating()
@@ -84,13 +85,17 @@ public class BoatPlayerController : MonoBehaviour
 
         if (Input.GetButton("BoatBombDrop") && onWaterSurface && Time.time > nextBomb)
         {
-            nextBomb = Time.time + bombRate;
-            objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x + 2, transform.position.y - 2, 0), bombPosition);
-            source.PlayOneShot(BarrelDropSound, 1f);
-            animator.SetTrigger("IsDropping");
-            Debug.Log("Bomb");
 
+            DropBomb();
         
+        }
+        else if(Input.GetKeyDown("joystick 2 button 2") && onWaterSurface)
+        {
+            foreach(GameObject x in currentBombs)
+            {
+                if(x.activeSelf)
+                    x.GetComponent<Bomb>().Explode();
+            }
         }
         else
         {
@@ -99,6 +104,15 @@ public class BoatPlayerController : MonoBehaviour
 
         BetterJump();
 
+    }
+
+    void DropBomb()
+    {
+        nextBomb = Time.time + bombRate;
+        GameObject clone = objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x + 2, transform.position.y - 2, 0), bombPosition);
+        currentBombs.Add(clone);
+        source.PlayOneShot(BarrelDropSound, 1f);
+        animator.SetTrigger("IsDropping");
     }
 
 

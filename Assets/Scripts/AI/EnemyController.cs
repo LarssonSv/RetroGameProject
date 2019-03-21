@@ -58,8 +58,14 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.name =="DestroyObjectCollider")
         {
             Debug.Log("Enemy hit destroy collider");
-            Destroy(gameObject);
+            DestroyObject();
         }
+    }
+    
+
+    void DestroyObject()
+    {
+        gameObject.SetActive(false);
     }
     
 
