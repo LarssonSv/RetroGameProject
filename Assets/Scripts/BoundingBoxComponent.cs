@@ -86,7 +86,7 @@ public class BoundingBoxComponent : MonoBehaviour
             }
         }
     }
-
+    
     private void PlayerColliding(GameObject x)
     {
         if (GameObject.ReferenceEquals(x, players[0]))
