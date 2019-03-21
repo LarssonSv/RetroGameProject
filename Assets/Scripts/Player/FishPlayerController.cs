@@ -60,4 +60,9 @@ public class FishPlayerController : MonoBehaviour
             rb2D.AddRelativeForce(Vector2.left * -forceSpeed * Time.deltaTime);
         }
     }
+
+    public void ResetVelocity()
+    {
+        rb2D.velocity = new Vector2(0f, 0f);
+    }
 }

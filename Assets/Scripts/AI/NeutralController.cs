@@ -29,13 +29,7 @@ public class NeutralController : MonoBehaviour
             if (gameMode)
             {
                 player = gameMode.currentFishPlayer.transform;
-            }
-            
-            //BoundingBoxComponent Box = currentGM.GetComponent<BoundingBoxComponent>();
-            //if(Box)
-            //{      
-            //    Box.AddBot(bot);
-            //}
+            }     
         }
     }
 
@@ -60,16 +54,4 @@ public class NeutralController : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "DestroyObjectCollider")
-        {
-            Debug.Log("Enemy hit destroy collider");
-            Destroy(gameObject);
-        }
-
-    }
-
-
 }
