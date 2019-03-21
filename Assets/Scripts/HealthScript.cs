@@ -12,7 +12,7 @@ public class HealthScript : MonoBehaviour
     public int startingHealth = 3;
     public int currentHealth;
     public float flashSpeed = 5f;
-    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+    public SpriteRenderer setSpriteColor;
 
     //Privates
     private bool isDead;
@@ -27,12 +27,21 @@ public class HealthScript : MonoBehaviour
     {
         damaged = true;
         currentHealth -= amount;
-        if(currentHealth <= 0 && !isDead)
+        GetComponent<SpriteRenderer>().color = Color.red;
+        StartCoroutine(whitecolor());
+        if (currentHealth <= 0 && !isDead)
         {
             Debug.Log("Took dmg!" + currentHealth);
             Death();
         }
     }
+
+    IEnumerator whitecolor()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 
     void Death()
     {
