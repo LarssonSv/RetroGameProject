@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7023280307620471529}
   - component: {fileID: 1192536169703397010}
   - component: {fileID: 3163198230043836722}
+  - component: {fileID: 2021240773696570112}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7023280307620471532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 5, y: 5, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e482378c8c02bb4fb9d094d43bc53b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fe4b02f529b7584e8b146029700558c, type: 3}
   m_Color: {r: 0.6226415, g: 0.28488788, b: 0.28488788, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
   startingHealth: 1
   currentHealth: 0
   flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  setSpriteColor: {fileID: 0}
 --- !u!58 &3163198230043836722
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +150,25 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.010728455}
   serializedVersion: 2
-  m_Radius: 2.4999998
+  m_Radius: 0.08667364
+--- !u!95 &2021240773696570112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7023280307620471532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74ce940f496595a44a8ca803e5fa9b42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -15,7 +15,6 @@ public class BoatPlayerController : MonoBehaviour
     public float fallmultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public Animator animator;
-    public Vector3 bombDrop;
 
     public AudioClip BarrelDropSound;
     private AudioSource source;
