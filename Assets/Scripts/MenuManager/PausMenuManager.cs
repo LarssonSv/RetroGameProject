@@ -60,7 +60,7 @@ public class PausMenuManager: MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        //.EditorApplication.isPlaying = false;
+        
     }
 
 }
