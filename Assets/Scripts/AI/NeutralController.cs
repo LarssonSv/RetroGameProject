@@ -29,13 +29,7 @@ public class NeutralController : MonoBehaviour
             if (gameMode)
             {
                 player = gameMode.currentFishPlayer.transform;
-            }
-            
-            //BoundingBoxComponent Box = currentGM.GetComponent<BoundingBoxComponent>();
-            //if(Box)
-            //{      
-            //    Box.AddBot(bot);
-            //}
+            }     
         }
     }
 
