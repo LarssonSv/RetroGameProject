@@ -60,6 +60,8 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Enemy hit destroy collider");
             Destroy(gameObject);
         }
+
+      
     }
     
 

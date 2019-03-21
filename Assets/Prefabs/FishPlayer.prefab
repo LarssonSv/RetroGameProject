@@ -150,9 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf061f1e50569274d9233ecc22523f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 3
   forceSpeed: 55
   maxSpeed: 3
+  animator: {fileID: 0}
 --- !u!114 &300086462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   startingHealth: 3
   currentHealth: 0
   flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  setSpriteColor: {fileID: 0}
 --- !u!82 &1388731277786750285
 AudioSource:
   m_ObjectHideFlags: 0
