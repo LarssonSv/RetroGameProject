@@ -15,6 +15,8 @@ public class FishPlayerController : MonoBehaviour
     protected float vertical = 0f;
     protected bool bAccelerate = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class FishPlayerController : MonoBehaviour
     private void OnEnable()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -43,10 +46,13 @@ public class FishPlayerController : MonoBehaviour
         if (Input.GetButtonDown("AccelerateFish") || accelerate >= 1)
         {
             bAccelerate = true;
+            animator.SetBool("IsSwimming", true);
+
         }
         else if (Input.GetButtonUp("AccelerateFish") || accelerate <= 0)
         {
             bAccelerate = false;
+            animator.SetBool("IsSwimming", false);
         }
        
         if (bAccelerate && rb2D.velocity.magnitude < maxSpeed)

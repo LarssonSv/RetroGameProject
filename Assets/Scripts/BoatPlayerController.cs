@@ -87,12 +87,14 @@ public class BoatPlayerController : MonoBehaviour
             nextBomb = Time.time + bombRate;
             objectPooler.SpawnFromPool("Bomb", new Vector3(transform.position.x + 2, transform.position.y - 2, 0), bombPosition);
             source.PlayOneShot(BarrelDropSound, 1f);
-            animator.SetBool("IsDropping", true);
+            animator.SetTrigger("IsDropping");
             Debug.Log("Bomb");
+
+        
         }
         else
         {
-            animator.SetBool("IsDropping", false);
+            animator.ResetTrigger("IsDropping");
         }
 
         BetterJump();
