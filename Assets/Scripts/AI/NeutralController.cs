@@ -60,4 +60,16 @@ public class NeutralController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "DestroyObjectCollider")
+        {
+            Debug.Log("Enemy hit destroy collider");
+            Destroy(gameObject);
+        }
+
+    }
+
+
 }

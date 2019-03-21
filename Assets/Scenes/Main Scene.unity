@@ -324,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384911898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.02, y: -3.72, z: 0}
+  m_LocalPosition: {x: 11.67, y: -3.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2041281200}
@@ -807,7 +807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570734550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.880001, y: 1.84, z: 0}
+  m_LocalPosition: {x: 11.530001, y: 1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2041281200}
@@ -2518,7 +2518,7 @@ MonoBehaviour:
     count: 2
     rate: 1
   - name: Second Wave
-    enemy: {fileID: 7023280307620471528, guid: 5f4c5b8caa8d7ae4eae84ca770a72d51, type: 3}
+    enemy: {fileID: 23100558900860593, guid: f89f437e2887f3d44b3cdbbd9d81fd7a, type: 3}
     count: 3
     rate: 2
   - name: Third Wave
@@ -2934,7 +2934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602626195}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -12.61, y: -0.08, z: 0}
+  m_LocalPosition: {x: -11.37, y: -0.08, z: 0}
   m_LocalScale: {x: 12.1206255, y: 0.2375, z: 1}
   m_Children: []
   m_Father: {fileID: 2041281200}
@@ -3583,7 +3583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909333115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.81, y: -0.7, z: 0}
+  m_LocalPosition: {x: 11.46, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2041281200}

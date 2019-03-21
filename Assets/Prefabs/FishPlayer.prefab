@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf061f1e50569274d9233ecc22523f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
-  forceSpeed: 100
+  rotationSpeed: 3
+  forceSpeed: 55
   maxSpeed: 3
   animator: {fileID: 0}
 --- !u!114 &300086462
