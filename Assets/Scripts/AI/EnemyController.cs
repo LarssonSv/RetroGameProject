@@ -36,19 +36,22 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 distance3d = player.position - transform.position;
-        Vector2 pointPlayer = new Vector2(distance3d.x, distance3d.y);
-
-        if (rb2D.velocity.magnitude < maxSpeed)
+        if(player)
         {
-            if (pointPlayer.magnitude < sightDistance && player.position.x < transform.position.x)
+            Vector3 distance3d = player.position - transform.position;
+            Vector2 pointPlayer = new Vector2(distance3d.x, distance3d.y);
+
+            if (rb2D.velocity.magnitude < maxSpeed)
             {
-                pointPlayer.Normalize();
-                rb2D.AddRelativeForce(pointPlayer * forceDash);
-            }
-            else
-            {
-                rb2D.AddRelativeForce(Vector2.left * forceSpeed);
+                if (pointPlayer.magnitude < sightDistance && player.position.x < transform.position.x)
+                {
+                    pointPlayer.Normalize();
+                    rb2D.AddRelativeForce(pointPlayer * forceDash);
+                }
+                else
+                {
+                    rb2D.AddRelativeForce(Vector2.left * forceSpeed);
+                }
             }
         }
     }

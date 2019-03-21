@@ -63,6 +63,10 @@ public class FishPlayerController : MonoBehaviour
 
     public void ResetVelocity()
     {
-        rb2D.velocity = new Vector2(0f, 0f);
+        print(rb2D.velocity.magnitude);
+        if (rb2D.velocity.magnitude > 1f)
+        {
+            rb2D.velocity = new Vector2(0f, 0f);
+        }
     }
 }
