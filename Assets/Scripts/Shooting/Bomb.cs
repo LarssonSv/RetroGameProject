@@ -19,12 +19,14 @@ public class Bomb : MonoBehaviour
     public AudioClip BoatHurt;
 
     public AudioSource source;
+    Animator anim;
 
 
     private void Start()
     {
         spriteRender = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
@@ -35,10 +37,9 @@ public class Bomb : MonoBehaviour
         {
             hit = true;
             endPosition = new Vector2(transform.position.x, 4f);
-            AddBubble();
             source.PlayOneShot(barrelSurface, 1f);
-            
-
+            AddBubble();
+            anim.SetBool("Bubble", true);
 
         }
     }
@@ -83,7 +84,9 @@ public class Bomb : MonoBehaviour
 
     void AddBubble()
     {
-        spriteRender.sprite = bubbleSprite;
+        
+        //spriteRender.sprite = bubbleSprite;
+        Debug.Log("Change of sprite");
     }
 
 
