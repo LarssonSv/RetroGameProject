@@ -2479,7 +2479,7 @@ MonoBehaviour:
     prefab: {fileID: 5076998746090733814, guid: 3b0434c9479feb14bbd91444222875da,
       type: 3}
     size: 10
-  - tag: buoy
+  - tag: shark
     prefab: {fileID: 1514003543201538916, guid: 816f0f433cee1814998d0196a0bb1e55,
       type: 3}
     size: 10
@@ -2497,7 +2497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChance: 34.9
   delay: 1.2
-  repeatRate: 2.03
+  repeatRate: 5.06
   offsetX: 15
   offsetY: 3
 --- !u!114 &1410498818

@@ -35,7 +35,7 @@ public class ObstacleSpawner : MonoBehaviour
         if(Random.Range(0,100) < spawnChance)
         {
             objectPooler.SpawnFromPool("mine", (currentCamera.transform.position + new Vector3(offsetX + Random.Range(-2,2), Random.Range(-2, 2))), Quaternion.identity);
-            objectPooler.SpawnFromPool("buoy", (currentCamera.transform.position + new Vector3(offsetX, offsetY, 0)), Quaternion.identity);
+            objectPooler.SpawnFromPool("shark", (currentCamera.transform.position + new Vector3(offsetX, offsetY, 0)), Quaternion.identity);
         }
     }
 

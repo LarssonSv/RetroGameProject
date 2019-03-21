@@ -1,24 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Author: Simon
+
 
 public class Mine : MonoBehaviour
 {
     [SerializeField] int damage = 1;
 
-    GameObject fish;
+    List<GameObject> toCheckFor = new List<GameObject>();
 
 
     private void Start()
     {
-        fish = GameManager.GM.CurrentGameMode.currentFishPlayer;
+        //THIS IS BAD, I just want to get everthing to a playable state atm, crunch
+        toCheckFor.Add(GameManager.GM.CurrentGameMode.currentFishPlayer);
+        toCheckFor.Add(GameManager.GM.CurrentGameMode.currentBoatPlayer);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.gameObject == fish )
+        if(toCheckFor.Contains(collision.transform.gameObject))
         {
-            fish.GetComponent<HealthScript>().TakeDamage(damage);
+            collision.transform.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
             this.gameObject.SetActive(false);
         }
     }
