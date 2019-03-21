@@ -22,7 +22,8 @@ public class GameMode : MonoBehaviour
     public void StartUp()
     {
         SpawnPlayers();
-     
+        Time.timeScale = 1;
+
     }
 
     public void SpawnPlayers()
