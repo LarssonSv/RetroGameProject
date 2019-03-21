@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 23100558900860607}
   - component: {fileID: 23100558900860606}
   - component: {fileID: 23100558900860605}
+  - component: {fileID: 9101093235156400919}
   m_Layer: 0
   m_Name: NeutralFish
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23100558900860604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.78, y: -3.36, z: -0.0078125}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 10.2403, y: -2.9552, z: -0.0078125}
+  m_LocalScale: {x: 0.18412, y: 0.18412, z: 0.18412}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -134,3 +135,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.1516846, y: -0.033712074}
   m_Size: {x: 4.8651876, y: 2.8427644}
   m_Direction: 1
+--- !u!114 &9101093235156400919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23100558900860604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc36c21983cbdd4095a1d7efeefe6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1
+  currentHealth: 0
+  flashSpeed: 5
+  setSpriteColor: {fileID: 0}
