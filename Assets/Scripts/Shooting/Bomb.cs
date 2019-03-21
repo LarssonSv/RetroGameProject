@@ -107,6 +107,8 @@ public class Bomb : MonoBehaviour
         {
             debugSphere = true;
 
+            anim.SetBool("explode", true);
+
             RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, blastRadius, Vector2.zero);
 
             foreach (RaycastHit2D x in hit)
@@ -130,7 +132,9 @@ public class Bomb : MonoBehaviour
                 }
             }
 
-            DestroyObject();
+            Invoke("DestroyObject", 1.5f);
+
+            
         }
     }
 
