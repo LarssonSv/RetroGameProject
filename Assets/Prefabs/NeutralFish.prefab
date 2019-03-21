@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 23100558900860606}
   - component: {fileID: 23100558900860605}
   - component: {fileID: 156917147}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: NeutralFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
