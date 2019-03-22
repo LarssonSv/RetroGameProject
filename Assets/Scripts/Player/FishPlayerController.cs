@@ -8,7 +8,7 @@ public class FishPlayerController : MonoBehaviour
 
     [SerializeField] protected float rotationSpeed = 2f;
     [SerializeField] protected float forceSpeed = 50f;
-    [SerializeField] protected float maxSpeed = 2f;
+    //[SerializeField] protected float maxSpeed = 2f;
 
     protected Rigidbody2D rb2D;
     protected float horizontal = 0f;
@@ -40,14 +40,16 @@ public class FishPlayerController : MonoBehaviour
         float angle = Mathf.Atan2(vertical, horizontal) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), Time.deltaTime * rotationSpeed);
 
-
+ 
         float accelerate = Input.GetAxisRaw("AccelerateFish");
 
         if (Input.GetButtonDown("AccelerateFish") || accelerate >= 1)
         {
-            bAccelerate = true;
-            animator.SetBool("IsSwimming", true);
+            if(!bAccelerate)
+            rb2D.AddRelativeForce(Vector2.left * -100 * Time.deltaTime);
 
+            bAccelerate = true;
+            animator.SetBool("IsSwimming", true);           
         }
         else if (Input.GetButtonUp("AccelerateFish") || accelerate <= 0)
         {
@@ -55,7 +57,7 @@ public class FishPlayerController : MonoBehaviour
             animator.SetBool("IsSwimming", false);
         }
        
-        if (bAccelerate && rb2D.velocity.magnitude < maxSpeed)
+        if (bAccelerate)  // && rb2D.velocity.magnitude < maxSpeed
         {
             rb2D.AddRelativeForce(Vector2.left * -forceSpeed * Time.deltaTime);
         }
@@ -63,10 +65,16 @@ public class FishPlayerController : MonoBehaviour
 
     public void ResetVelocity()
     {
-        print(rb2D.velocity.magnitude);
+       
         if (rb2D.velocity.magnitude > 1f)
         {
             rb2D.velocity = new Vector2(0f, 0f);
+
+        }
+
+        if (bAccelerate)
+        {
+            rb2D.AddRelativeForce(Vector2.left * -500 * Time.deltaTime);
         }
     }
 }
