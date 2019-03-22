@@ -129,10 +129,11 @@ MonoBehaviour:
   waterSurface:
     serializedVersion: 2
     m_Bits: 1024
-  jumpHeight: {x: 0, y: 8}
+  jumpHeight: {x: 0, y: 10}
   fallmultiplier: 2.5
   lowJumpMultiplier: 2
   animator: {fileID: 1383843366704717509}
+  bombDrop: {x: 0, y: 0, z: 0}
   BarrelDropSound: {fileID: 8300000, guid: 2a042c57c5cd4e64fb33f49391a74769, type: 3}
   bombRate: 2
 --- !u!50 &6920138440220548275
@@ -171,7 +172,7 @@ MonoBehaviour:
   startingHealth: 3
   currentHealth: 0
   flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  damaged: 0
 --- !u!82 &6512916697650767400
 AudioSource:
   m_ObjectHideFlags: 0
